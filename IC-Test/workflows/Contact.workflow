@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Contact_Update_Alt_Mailing_Country</fullName>
+        <field>IntegratedMailingCountry__c</field>
+        <formula>MailingCountry</formula>
+        <name>Contact - Update Alt Mailing Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Update_Alt_Mailing_State</fullName>
+        <field>IntegratedMailingState__c</field>
+        <formula>MailingState</formula>
+        <name>Contact - Update Alt Mailing State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Update_Alt_Other_Country</fullName>
+        <field>IntegratedOtherCountry__c</field>
+        <formula>OtherCountry</formula>
+        <name>Contact - Update Alt Other Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Update_Alt_Other_State</fullName>
+        <field>IntegratedOtherState__c</field>
+        <formula>OtherState</formula>
+        <name>Contact - Update Alt Other State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DeactivateContact</fullName>
+        <field>Contact_Status__c</field>
+        <literalValue>Inactive</literalValue>
+        <name>DeactivateContact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DeactivateContactRecType</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Inactive</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>DeactivateContactRecType</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ReactivateContact</fullName>
+        <field>Contact_Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>ReactivateContact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ReactivateContactRecType</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Active</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>ReactivateContactRecType</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ReassignInactiveContactToAdmin</fullName>
+        <field>OwnerId</field>
+        <lookupValue>xxx@univarusa.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>ReassignInactiveContactToAdmin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contact - Update Alt State and Country Fields</fullName>
+        <actions>
+            <name>Contact_Update_Alt_Mailing_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Update_Alt_Mailing_State</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Update_Alt_Other_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Update_Alt_Other_State</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(ISNEW() ||  ISCHANGED( MailingCountry ) ||  ISCHANGED ( MailingState ) ||  ISCHANGED( OtherCountry ) ||  ISCHANGED ( OtherState ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>DeactivateContact</fullName>
+        <actions>
+            <name>DeactivateContactRecType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ReassignInactiveContactToAdmin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When contact status (picklist value) is changed to Inactive, reassigns to Admin Id and changes record type</description>
+        <formula>AND(ISPICKVAL( Contact_Status__c  , &quot;Inactive&quot;),  ISCHANGED(Contact_Status__c) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>DeactivateContactReassignedToAdmin</fullName>
+        <actions>
+            <name>DeactivateContact</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>DeactivateContactRecType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If an active contact is reassigned to the admin id designated for inactive contacts, then automatically deactivate it (set status and rectype to Inactive)</description>
+        <formula>AND(ISPICKVAL( Contact_Status__c  , &quot;Active&quot;), ISCHANGED(OwnerId) , OwnerId = &apos;00530000000dTej&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ReactivateContactReassignedToRealPerson</fullName>
+        <actions>
+            <name>ReactivateContact</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ReactivateContactRecType</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If an inactive contact is reassigned to a real person, then automatically reactivate it.</description>
+        <formula>AND(ISPICKVAL( Contact_Status__c  , &quot;Inactive&quot;), PRIORVALUE(OwnerId) = &apos;00530000000dTej&apos;,  ISCHANGED(OwnerId ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

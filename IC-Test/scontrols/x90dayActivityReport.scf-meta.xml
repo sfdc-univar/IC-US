@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>New useful link from Account Record to a 90-day Activity Report. The link should appear on both the &quot;Ship-to&quot; and &quot;Prospect&quot; Account Record types.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>90-day Activity Report</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

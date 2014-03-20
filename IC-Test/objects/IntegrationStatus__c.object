@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Holds information related to Java Integration Process health</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>DetailedMessage__c</fullName>
+        <description>This can be picked up from the Message.properties or errors returned from SFDC in SaveResults object. Body/Message of the emails.</description>
+        <externalId>false</externalId>
+        <label>Detailed Message</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ExecutionStartTimestamp__c</fullName>
+        <description>When this process execution started. Value in this field will be same for all the IntegrationStatus records created by a process run.
+When looking at Process Completion View (for Nightly Batch Process), this field displays Start Time of Upload Process, not start time of Mirror Process. We do not need to create End Timestamp field because Creation time of this record will be same as EndTime of Upload Process (SFDC Integration).</description>
+        <externalId>false</externalId>
+        <label>Execution Start Timestamp</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessName__c</fullName>
+        <description>Name of the Process, like CPP Process or Nightly Batch Process.</description>
+        <externalId>false</externalId>
+        <label>Process Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessSubType__c</fullName>
+        <description>Process SubTypes are different tasks done by the Integration application and they are:
+• Insert New Corporate Accounts
+• Update Updated Corporate Accounts
+• Upadte ParentId of Updated ShipTo Accounts
+• Insert New ShipTo Accounts
+• Update Updated ShipTo Accounts
+• Update ShipTo Accounts Owner Change
+• Update Prospect Account Sales Hierarchy
+• Update CPP Picklists ID
+• Update ChemCare Picklists ID</description>
+        <externalId>false</externalId>
+        <label>Process SubType</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>‘F’ or ‘S’ – This tells if the process was Successful or not</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SummaryMessage__c</fullName>
+        <description>Subject of the emails. This is being picked up from the Message.properties file.</description>
+        <externalId>false</externalId>
+        <label>Summary Message</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Defines the type of IntegrationStatus record.
+I - INFO 
+A - ALERT 
+E – ERROR</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Integration Status</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>SummaryMessage__c</columns>
+        <columns>ProcessName__c</columns>
+        <columns>DetailedMessage__c</columns>
+        <columns>ExecutionStartTimestamp__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Type__c</columns>
+        <columns>ProcessSubType__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AllbyDate</fullName>
+        <columns>ExecutionStartTimestamp__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>NAME</columns>
+        <columns>ProcessName__c</columns>
+        <columns>Status__c</columns>
+        <columns>DetailedMessage__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All by Date</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CorporateAccountsNew</fullName>
+        <columns>NAME</columns>
+        <columns>ProcessName__c</columns>
+        <columns>ExecutionStartTimestamp__c</columns>
+        <columns>ProcessSubType__c</columns>
+        <columns>SummaryMessage__c</columns>
+        <columns>DetailedMessage__c</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcessSubType__c</field>
+            <operation>equals</operation>
+            <value>Insert New Corporate Accounts</value>
+        </filters>
+        <label>Corporate Accounts - New</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CorporateAccountsOwnerChange</fullName>
+        <columns>NAME</columns>
+        <columns>ProcessName__c</columns>
+        <columns>ExecutionStartTimestamp__c</columns>
+        <columns>ProcessSubType__c</columns>
+        <columns>SummaryMessage__c</columns>
+        <columns>DetailedMessage__c</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcessSubType__c</field>
+            <operation>equals</operation>
+            <value>Update Updated Corporate Accounts</value>
+        </filters>
+        <label>Corporate Accounts - Owner Change</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>NewShipToAccountsErrors</fullName>
+        <columns>NAME</columns>
+        <columns>ProcessName__c</columns>
+        <columns>ProcessSubType__c</columns>
+        <columns>ExecutionStartTimestamp__c</columns>
+        <columns>SummaryMessage__c</columns>
+        <columns>DetailedMessage__c</columns>
+        <columns>Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcessSubType__c</field>
+            <operation>equals</operation>
+            <value>Insert New ShipTo Accounts</value>
+        </filters>
+        <label>New ShipTo Accounts - Errors</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>NightlyBatchProcessCompletionSummary</fullName>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <columns>NAME</columns>
+        <columns>ProcessName__c</columns>
+        <columns>ExecutionStartTimestamp__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>SummaryMessage__c</columns>
+        <columns>DetailedMessage__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcessName__c</field>
+            <operation>equals</operation>
+            <value>Nightly Batch Process</value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>I</value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Nightly Batch Process Completion Summary</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>ShipToAccountsOwnrChgErrors</fullName>
+        <columns>NAME</columns>
+        <columns>ProcessName__c</columns>
+        <columns>ProcessSubType__c</columns>
+        <columns>ExecutionStartTimestamp__c</columns>
+        <columns>SummaryMessage__c</columns>
+        <columns>DetailedMessage__c</columns>
+        <columns>Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProcessSubType__c</field>
+            <operation>equals</operation>
+            <value>Update ShipTo Accounts Owner Change</value>
+        </filters>
+        <label>ShipTo Accounts Ownr Chg - Errors</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>{00000}</displayFormat>
+        <label>Integration Status Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Integration Status</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>ExecutionStartTimestamp__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ProcessName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ProcessSubType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SummaryMessage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ProcessName__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ProcessSubType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SummaryMessage__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ExecutionStartTimestamp__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DetailedMessage__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ProcessName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ProcessSubType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ExecutionStartTimestamp__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SummaryMessage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DetailedMessage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

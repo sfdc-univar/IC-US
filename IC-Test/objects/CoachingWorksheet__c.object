@@ -1,0 +1,2307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>AgingDays__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Status__c) &lt;&gt; &quot;Manager Approved&quot;,TODAY() -  SessionDate__c, FinalApprovalDate__c - SessionDate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days since Session Date</inlineHelpText>
+        <label>Aging Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Email_Sent__c</fullName>
+        <description>The date an email was sent to the Manager indicating they haven&apos;t created any new worksheets in 90 days.  The batch Apex will look at ALL worksheets for that manager/dr combination and send just one, but this field has to be updated on all.</description>
+        <externalId>false</externalId>
+        <label>Date Email Sent</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DirectReportFirstName__c</fullName>
+        <description>Used behind the scenes only - for example in email templates for notifying the Direct Report of a status change in their coaching worksheets.</description>
+        <externalId>false</externalId>
+        <formula>DirectReport__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Direct Report First Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectReportNameLink__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; +  DirectReport__c ,  DirectReport__r.FirstName + &quot; &quot; +  DirectReport__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Direct Report Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectReportNm__c</fullName>
+        <description>Used behind the scenes, for example by Apex in formatting screen error messages.</description>
+        <externalId>false</externalId>
+        <formula>DirectReport__r.FirstName + &quot; &quot; + DirectReport__r.LastName</formula>
+        <label>Direct Report Name - No Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectReport__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Direct Report</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DirectReport</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinalApprovalDate__c</fullName>
+        <description>Date when this worksheet received final approval, set by workflow</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date when this worksheet received final approval</inlineHelpText>
+        <label>Final Approval Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Info__c</fullName>
+        <description>Populated by Workflow, to display context-sensitive tips for each status.</description>
+        <externalId>false</externalId>
+        <label>Helpful Information</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Instructions__c</fullName>
+        <externalId>false</externalId>
+        <label>Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ManagerFirstName__c</fullName>
+        <description>Used behind the scenes only - for example in email template for notifying Manager that a coaching worksheet is ready for their approval.</description>
+        <externalId>false</externalId>
+        <formula>Manager__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manager First Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManagerName__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; +  Manager__c ,  Manager__r.FirstName + &quot; &quot; +  Manager__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manager Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Manager</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NextStepsandActionItems__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Steps and Action Items</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ObservationsAndNotes__c</fullName>
+        <externalId>false</externalId>
+        <label>Observations &amp; Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity1__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity 1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Teach: Offers Unique Perspective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Strong Industry Awareness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Agility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Sales Innovation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Is Comfortable Discussing Money/ROI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Results Orientation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Business &amp; Financial Acumen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity2__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity 2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Teach: Offers Unique Perspective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Strong Industry Awareness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Agility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Sales Innovation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Is Comfortable Discussing Money/ROI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Results Orientation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Business &amp; Financial Acumen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity3__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity 3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Teach: Offers Unique Perspective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Strong Industry Awareness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Agility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Sales Innovation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Is Comfortable Discussing Money/ROI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Results Orientation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Business &amp; Financial Acumen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OwnerLink__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Owner Link</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CoachingOwnerLink</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OwnerRole__c</fullName>
+        <externalId>false</externalId>
+        <formula>OwnerLink__r.UserRole.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RelatedAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Optional - Account related to this Coaching Worksheet, if there is one.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>(Optional) Account that this Coaching Worksheet is related to</inlineHelpText>
+        <label>Related Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Coaching Worksheets</relationshipLabel>
+        <relationshipName>Coaching_Worksheets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SessionDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The coaching observation date that this worksheet is for</inlineHelpText>
+        <label>Session Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Draft: Not yet released for review by Direct Report.
+Direct Report Review: Direct Report needs to review &amp; submit for approval
+Feedback Received: Direct Report has submitted for approval. Now waiting for manager review.
+Manager Approved: Complete.</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Report Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feedback Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manager Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strength1__c</fullName>
+        <externalId>false</externalId>
+        <label>Strength 1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Teach: Offers Unique Perspective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Strong Industry Awareness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Agility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Sales Innovation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Is Comfortable Discussing Money/ROI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Results Orientation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Business &amp; Financial Acumen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strength2__c</fullName>
+        <externalId>false</externalId>
+        <label>Strength 2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Teach: Offers Unique Perspective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Strong Industry Awareness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Agility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Sales Innovation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Is Comfortable Discussing Money/ROI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Results Orientation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Business &amp; Financial Acumen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strength3__c</fullName>
+        <externalId>false</externalId>
+        <label>Strength 3</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Teach: Offers Unique Perspective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teach: Strong Industry Awareness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Agility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tailor: Sales Innovation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Is Comfortable Discussing Money/ROI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Results Orientation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take Control: Business &amp; Financial Acumen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Timeliness__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Status__c)  =  &quot;Manager Approved&quot;,&quot;&quot;,
+     IF(AgingDays__c &gt; 6,IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;red&quot;, 15, 15), 
+           IF(AgingDays__c &gt; 2,IMAGE(&quot;/img/samples/flag_yellow.gif&quot;, &quot;yellow&quot;, 15, 15), 
+                 IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;green&quot;, 15, 15))))</formula>
+        <inlineHelpText>Green = Session Date up to 2 days ago
+Yellow = Session Date 3-6 days ago
+Red = Session Date 7 or more days ago</inlineHelpText>
+        <label>Timeliness</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WorksheetNameURL__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; +  Id ,  DirectReport__r.LastName + &quot; - &quot; + TEXT( SessionDate__c ),&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Worksheet Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WorksheetName__c</fullName>
+        <externalId>false</externalId>
+        <formula>DirectReport__r.LastName + &quot; - &quot; + TEXT( SessionDate__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Worksheet Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Coaching Worksheet</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>WorksheetName__c</columns>
+        <columns>SessionDate__c</columns>
+        <columns>AgingDays__c</columns>
+        <columns>Timeliness__c</columns>
+        <columns>Status__c</columns>
+        <columns>DirectReport__c</columns>
+        <columns>Manager__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Manager_Worksheet_Feedback_RECEIVED</fullName>
+        <columns>NAME</columns>
+        <columns>DirectReport__c</columns>
+        <columns>RelatedAccount__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>AgingDays__c</columns>
+        <columns>Timeliness__c</columns>
+        <columns>FinalApprovalDate__c</columns>
+        <columns>ManagerName__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Manager Approved</value>
+        </filters>
+        <label>Sales Rep 2: APPROVED by Mgr</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Manager_Worksheet_NOT_Sent</fullName>
+        <columns>NAME</columns>
+        <columns>DirectReport__c</columns>
+        <columns>WorksheetName__c</columns>
+        <columns>RelatedAccount__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>AgingDays__c</columns>
+        <columns>Timeliness__c</columns>
+        <columns>FinalApprovalDate__c</columns>
+        <columns>ManagerName__c</columns>
+        <columns>WorksheetNameURL__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Direct Report Review</value>
+        </filters>
+        <label>Manager 2: SENT to Sales Rep for REVIEW</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Manager_Worksheet_SENT_Sales_Rep_REVIEW</fullName>
+        <columns>NAME</columns>
+        <columns>WorksheetName__c</columns>
+        <columns>DirectReport__c</columns>
+        <columns>RelatedAccount__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>AgingDays__c</columns>
+        <columns>Timeliness__c</columns>
+        <columns>FinalApprovalDate__c</columns>
+        <columns>ManagerName__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Feedback Received</value>
+        </filters>
+        <label>Manager 3: Feedback RECEIVED to finalize</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Coaching_Worksheets</fullName>
+        <columns>NAME</columns>
+        <columns>WorksheetName__c</columns>
+        <columns>DirectReport__c</columns>
+        <columns>RelatedAccount__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>AgingDays__c</columns>
+        <columns>Timeliness__c</columns>
+        <columns>FinalApprovalDate__c</columns>
+        <columns>ManagerName__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Draft</value>
+        </filters>
+        <label>Manager 1: NOT Sent - Draft</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Sales_OpsCoachingWorksheets</fullName>
+        <columns>NAME</columns>
+        <columns>DirectReport__c</columns>
+        <columns>Manager__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>WorksheetName__c</columns>
+        <columns>Status__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DirectReport__c</field>
+            <operation>equals</operation>
+            <value>Steve Moore,Rian Titus,Gina Pastorelli,An Thai,Bennett Ortiz,Jerrod Arkins</value>
+        </filters>
+        <label>Sales Ops Coaching Worksheets</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Rep_2_APPROVED_by_Mgr</fullName>
+        <columns>NAME</columns>
+        <columns>WorksheetName__c</columns>
+        <columns>DirectReport__c</columns>
+        <columns>RelatedAccount__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>AgingDays__c</columns>
+        <columns>Timeliness__c</columns>
+        <columns>FinalApprovalDate__c</columns>
+        <columns>ManagerName__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Manager Approved</value>
+        </filters>
+        <label>Manager 4: APPROVED by Mgr</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>X2_Manager_SENT_to_Sales_Rep_for_REVIEW</fullName>
+        <columns>NAME</columns>
+        <columns>WorksheetName__c</columns>
+        <columns>DirectReport__c</columns>
+        <columns>RelatedAccount__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>AgingDays__c</columns>
+        <columns>Timeliness__c</columns>
+        <columns>FinalApprovalDate__c</columns>
+        <columns>ManagerName__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Direct Report Review</value>
+        </filters>
+        <label>Sales Rep 1: Mine to REVIEW</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>CW-{0000}</displayFormat>
+        <label>Coaching ID#</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Coaching Worksheets</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>DirectReportReview</fullName>
+        <active>true</active>
+        <label>2. Direct Report Review</label>
+        <picklistValues>
+            <picklist>Opportunity1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Direct Report Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Draft</fullName>
+        <active>true</active>
+        <description>For Coaching Worksheets in New or Draft Status - for page layout differentiation</description>
+        <label>1. Draft</label>
+        <picklistValues>
+            <picklist>Opportunity1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Direct Report Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FeedbackReceived</fullName>
+        <active>true</active>
+        <label>3. Feedback Received</label>
+        <picklistValues>
+            <picklist>Opportunity1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Feedback Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ManagerApproved</fullName>
+        <active>true</active>
+        <label>4. Manager Approved</label>
+        <picklistValues>
+            <picklist>Opportunity1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opportunity3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Manager Approved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength1__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength2__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength3__c</picklist>
+            <values>
+                <fullName>Tailor%3A Agility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Incorporates Economic Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Leverages Individual Value Drivers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tailor%3A Sales Innovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Allocates Resources Effectively</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Business %26 Financial Acumen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Creates Constructive Tension to Drive Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Is Comfortable Discussing Money%2FROI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Take Control%3A Results Orientation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Confidence in Commercial Teaching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Drives Two-Way Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Offers Unique Perspective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teach%3A Strong Industry Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>DirectReport__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SessionDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>DirectReport__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>WorksheetName__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Direct_Report__c</fullName>
+        <label>Direct Report</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>Direct_Report_Cannot_Create_for_Self</fullName>
+        <active>true</active>
+        <description>You can&apos;t create a Coaching Worksheet where you yourself are the direct report.</description>
+        <errorConditionFormula>AND(ISNEW(), $User.Id =  DirectReport__c )</errorConditionFormula>
+        <errorDisplayField>DirectReport__c</errorDisplayField>
+        <errorMessage>You cannot create a Coaching Worksheet for yourself.  Your Manager will create one for you and send it to you for your review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Direct_Report_Cannot_Edit_Draft</fullName>
+        <active>true</active>
+        <description>Direct reports aren&apos;t allowed to edit draft worksheets. Generally they won&apos;t even be able to see them, but this rule is needed for direct reports who have the &quot;View All Data&quot; permission, like Sales Ops</description>
+        <errorConditionFormula>AND( NOT(ISNEW()),ISPICKVAL(Status__c,&quot;Draft&quot;),  $User.Id =  DirectReport__c , NOT(CONTAINS( $Profile.Name,&quot;System Admin&quot;)))</errorConditionFormula>
+        <errorMessage>Your manager is still editing this worksheet. You will receive an email when it is ready for you to review and edit.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OwnerChange_Not_Allowed</fullName>
+        <active>true</active>
+        <description>Can’t change owner under these circumstances. We NEVER really want them to change owner, but need to allow the Apex code to change the owner anyway, so have to make exceptions here.</description>
+        <errorConditionFormula>OR(
+AND(ISPICKVAL( Status__c , &quot;Draft&quot;), OwnerId =  DirectReport__c ),
+AND(NOT(ISPICKVAL( Status__c , &quot;Draft&quot;)), OwnerId &lt;&gt;  DirectReport__c )
+)</errorConditionFormula>
+        <errorDisplayField>OwnerId</errorDisplayField>
+        <errorMessage>Cannot change owner</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Session_Date_Cannot_be_in_Future</fullName>
+        <active>true</active>
+        <description>Can&apos;t enter a future session date.</description>
+        <errorConditionFormula>SessionDate__c &gt; TODAY()</errorConditionFormula>
+        <errorDisplayField>SessionDate__c</errorDisplayField>
+        <errorMessage>Session Date cannot be in the future.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Session_Date_Required</fullName>
+        <active>true</active>
+        <description>Won&apos;t be used on the page layouts since Session Date is R/O after Draft stage.  But use to prevent invalid data entry from listview editing.</description>
+        <errorConditionFormula>ISBLANK(SessionDate__c)</errorConditionFormula>
+        <errorDisplayField>SessionDate__c</errorDisplayField>
+        <errorMessage>Session Date is required.</errorMessage>
+    </validationRules>
+</CustomObject>

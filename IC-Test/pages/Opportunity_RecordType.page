@@ -1,0 +1,5 @@
+<apex:page standardController="CPP__c" extensions="Opportunity_RecordType" action="{!reDirect}">
+<!-- Used in PublisherAction for Creating an Opportunity.  Let's the user pick a RecordType -->
+
+      
+</apex:page>

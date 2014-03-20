@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<HTML> 
+<HEAD> 
+<TITLE></TITLE> 
+<script language="Javascript"> 
+function go() { 
+window.opener.focus(); 
+var url = "/00O30000002NwAZ?pv0={!Account.Id}&pc0=ACCOUNT_ID&pn0=eq"; 
+window.opener.location.href = url; 
+self.close(); 
+} 
+go(); 
+</script> 
+</HEAD> 
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000"><p align="center">Please wait...</p></BODY> 
+</HTML>

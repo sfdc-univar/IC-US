@@ -1,0 +1,25 @@
+<apex:page showHeader="true" title="UPAT Tool" >
+
+<script type="text/javascript">
+document.onreadystatechange = WaitForComplete;
+
+function WaitForComplete(){ 
+
+var winState = document.readyState;
+//alert(winState);
+ if(winState == 'complete'){ 
+window.open("https://uvf.owex.oliverwyman.com/Distribution", "UPAT", "");    
+ //testwindow.focus();
+    }
+
+}
+</script>
+
+ <apex:sectionHeader title="Univar Price Advantage Tool" help="/help/doc/user_ed.jsp" id="upat"/> 
+
+<apex:pageBlock title="Univar Price Advantage Tool">
+A new window is being opened for the UPAT Tool.  If it does not open, please click the link below:<br/><br/>
+<a href="https://uvf.owex.oliverwyman.com/Distribution" id="ow" target="_new">Open the UPAT Tool</a>        
+ 
+ </apex:pageBlock>
+</apex:page>

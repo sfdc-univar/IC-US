@@ -1,0 +1,4 @@
+<apex:page standardController="Account" sidebar="no" showHeader="false" >
+   <apex:pageMessage summary="This Account is owned by the MUNI Team" severity="info" strength="1" rendered="{!Account.Muni_Team_Account__c}" />
+        
+</apex:page>

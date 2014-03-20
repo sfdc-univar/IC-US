@@ -1,0 +1,10 @@
+<apex:page controller="AlertLicenseAvail" title="Licenses Available" >
+
+<apex:pageBlock title="Licenses Available">
+
+<apex:outputText value="Total Licenses:  {!license}"/><br/>
+<apex:outputText value="Licenses Free: {!licenseAvailable}"/>
+</apex:pageBlock>
+
+
+</apex:page>

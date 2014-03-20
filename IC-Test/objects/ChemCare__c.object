@@ -1,0 +1,4843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is the CPP for the ChemCare products.  The Product is a &quot;Waste Stream&quot;; the Producer is a &quot;TSDF&quot;; and the Supplier is a &quot;Service Provider&quot;.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>AccountId__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>ChemCare</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>AnnualGeneratedPounds__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual LBs Generated</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AnnualGeneratedUOM__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Amount Generated in UOM</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CCCorporateAccountId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ChemCare Corporate Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>R00N30000000jMR0EAM</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CompetitorTSDF__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitor TSDF</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Advanced Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AGFA Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agmet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amerifuel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMS Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aristech Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ash Grove Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ashland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A-Tech Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ausimont USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barton Solvents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beaver Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blacklidge Emulsions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brenntag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bridgeport United Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burlington Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Casie Ecology Oil Salvage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chem Con-Georgia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Pollution Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Solvents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Waste Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chem-Pak Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemtron</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chesapeake Waste Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chief Wastes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clean Harbors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coleman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Continental Cement Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Covanta Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyanokem Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyclechem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyro Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demenno Kerdoon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disposal Systems Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSM Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dukes Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dupont</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DuraTherm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dynecol Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ecoflo Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Effective Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emerald Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Encycle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ensco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirocare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental Compliance Corp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosafe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosolve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirotech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirotrol Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EOG Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Essroc Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Excel TSD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exide Corp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fairbanks Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ferguson Environmental (FER)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fielding Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Freehold Cartage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Future Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GCL Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giant Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giant Resource Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GNB Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Great Lakes Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenlights</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenway Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gulf Coast Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HazChem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heritage Treatment Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heritage-WTI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holnam Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hukill Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrite Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydromet Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Waste Services (IWS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inmetco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intergulf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jacobus Quick Fuel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kaiser Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keystone Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lederle Laboratories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leisch &amp; Associates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lone Star Alternate Fuels</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lone Star Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LWD, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M&amp;M Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M&amp;M Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marathon Ashland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marisol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Martinez Refining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>McWhorter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metalico</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MFR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Michigan Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Michigan Recovery Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MicroNutrients</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Millennium Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nepera Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norlite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norlite Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Listed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Peoria Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Perma-Fix Treatment Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Petro Chem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phibro-Tech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Philip Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phillip Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pollution Control Industries (PCI)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Potomac Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proliquids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quemetco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R3 Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reclaimed Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recyclights</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redbud Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red Earth Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regeneration Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Republic Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Republic Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revere Refining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rhodia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rineco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rollins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Romic Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ross Incineration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RS Used oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Safety-Kleen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S and W Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SET Environmental (Treatment One)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siemens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solite Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solvent Recovery Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solvent Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Southeastern Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Waste Disposal, Inc. (SWDI)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPSA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strong Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Superior Special Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systech Corporation (LaFarge)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teris</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas Ecologists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas Molecular</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Environmental Quality Company (EQ)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Treatment One</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tri State</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Oil Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Univar USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Ecology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USL City Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Veolia ES Tech Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vexor Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vopak Logistics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vulcan Materials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wabash Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Control Specialists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Recovery Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wayne Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Central Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>World Resource Corporation (WRC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WRR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zinc Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Competitor_TSDF_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Competitor TSDF</label>
+        <referenceTo>Vendor__c</referenceTo>
+        <relationshipLabel>Waste Streams (Competitor TSDF Lookup)</relationshipLabel>
+        <relationshipName>Waste_Streams</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContainerSize__c</fullName>
+        <description>New field added by request of Leah Knight 11/17/2005.
+Steve MacDonnell requested increasing length of this field from 3 to 6 digits 2/26/2007.</description>
+        <externalId>false</externalId>
+        <label>Container Size</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContainerType__c</fullName>
+        <externalId>false</externalId>
+        <label>Container Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Burlap, Cloth, Paper, Plastic Bag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cylinders</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dump Truck</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fiberboard or Plastic Drums</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fiber or Plastic Boxes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flow Bins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lab Pack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metal Boxes, Cartons, Cases</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metal Drums, Barrels, Kegs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rail Cars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roll-off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tanks Portable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tank Truck</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacuum Box</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wooden Boxes, Cartons, Cases</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wooden Drums, Barrels, Kegs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ContainerUOM__c</fullName>
+        <description>Added new field per user request Leah Knight 11/17/2005</description>
+        <externalId>false</externalId>
+        <label>Container UOM</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bottle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Box</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bulk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Can</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carboy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cylinder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drum</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fiber Drum</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gallon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Half Pint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supersack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tote</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ContractExpDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Exp Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DCodes__c</fullName>
+        <externalId>false</externalId>
+        <label>D Codes</label>
+        <picklist>
+            <picklistValues>
+                <fullName>D001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D002</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D003</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D004</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D005</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D006</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D007</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D008</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D009</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D021</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D022</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D023</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D024</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D025</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D026</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D027</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D028</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D029</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D030</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D031</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D032</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D033</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D034</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D035</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D036</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D037</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D038</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D039</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D040</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D041</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D042</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D043</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DisposalTechnology__c</fullName>
+        <externalId>false</externalId>
+        <label>Disposal Technology</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Deep Well Injection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fuel Blending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incineration (Hazardous Only)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incineration (Non-Hazardous Only)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lab Packing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Landfill (Hazardous Only)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Landfill (Non-Hazardous Only)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Off Spec Market</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recycling &amp; Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Secondary Fuels</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thermal Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Universal Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wastewater Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedSalesValue__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Sales Value</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventOnGoingBusiness__c</fullName>
+        <description>Added new field per user request Leah Knight 11/17/2005</description>
+        <externalId>false</externalId>
+        <label>Event/Ongoing Business</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Event (one-time)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ongoing Business</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FCodes__c</fullName>
+        <externalId>false</externalId>
+        <label>F Codes</label>
+        <picklist>
+            <picklistValues>
+                <fullName>F001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F002</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F003</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F004</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F005</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F006</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F007</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F008</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F009</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F027</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F032</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F034</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F035</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F037</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F038</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F039</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FOB__c</fullName>
+        <externalId>false</externalId>
+        <label>FOB</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ship point</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warehouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Hazardous__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Added new field per user request Leah Knight 11/17/2005</description>
+        <externalId>false</externalId>
+        <label>Hazardous</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>KCodes__c</fullName>
+        <externalId>false</externalId>
+        <label>K Codes</label>
+        <picklist>
+            <picklistValues>
+                <fullName>KO88</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K022</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K044</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K045</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K046</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K048</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K049</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K050</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K051</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K052</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K060</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K061</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K062</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K083</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K086</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K087</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K088</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K093</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K094</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K104</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K126</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K141</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K142</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K143</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K144</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K145</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K147</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K148</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K156</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K157</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K158</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K169</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K170</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K171</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K172</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity Name</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>ChemCare</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PCodes__c</fullName>
+        <externalId>false</externalId>
+        <label>P Codes</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P002</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P003</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P004</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P005</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P006</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P007</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P008</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P009</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P021</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P022</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P023</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P024</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P026</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P027</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P028</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P029</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P030</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P031</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P033</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P034</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P036</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P037</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P038</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P039</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P040</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P041</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P042</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P043</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P044</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P045</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P046</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P047</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P048</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P049</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P050</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P051</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P054</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P056</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P057</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P058</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P059</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P060</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P062</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P063</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P064</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P065</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P066</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P067</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P068</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P069</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P070</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P071</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P072</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P073</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P074</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P075</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P076</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P077</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P078</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P081</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P082</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P084</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P085</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P087</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P088</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P089</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P092</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P093</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P094</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P095</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P096</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P097</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P098</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P099</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P101</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P102</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P103</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P104</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P105</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P106</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P107</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P108</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P109</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P110</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P111</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P112</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P113</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P114</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P115</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P116</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P118</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P119</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P120</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P121</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P122</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P123</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P127</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P188</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P194</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P199</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P205</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PartnerTSDF__c</fullName>
+        <externalId>false</externalId>
+        <label>Univar Partner TSDF</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Advanced Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AGFA Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agmet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amerifuel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMS Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aristech Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ash Grove Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ashland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A-Tech Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ausimont USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barton Solvents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beaver Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blacklidge Emulsions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brenntag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bridgeport United Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burlington Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Casie Ecology Oil Salvage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chem Con-Georgia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Pollution Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Solvents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Waste Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chem-Pak Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemtron</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chesapeake Waste Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chief Wastes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clean Harbors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coleman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Continental Cement Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Covanta Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyanokem Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyclechem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyro Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demenno Kerdoon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disposal Systems Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSM Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dukes Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dupont</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dynecol Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ecoflo Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Effective Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emerald Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Encycle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ensco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirocare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental Compliance Corp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosafe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosolve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirotech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirotrol Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EOG Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Essroc Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Excel TSD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exide Corp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fairbanks Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ferguson Environmental (FER)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fielding Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Freehold Cartage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Future Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GCL Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giant Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giant Resource Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GNB Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Great Lakes Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenlights</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenway Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gulf Coast Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HazChem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heritage Treatment Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heritage-WTI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holnam Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hukill Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrite Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydromet Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Waste Services (IWS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inmetco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intergulf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jacobus Quick Fuel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kaiser Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keystone Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lederle Laboratories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leisch &amp; Associates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lone Star Alternate Fuels</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lone Star Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LWD, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M&amp;M Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M&amp;M Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marathon Ashland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marisol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Martinez Refining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>McWhorter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metalico</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MFR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Michigan Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Michigan Recovery Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MicroNutrients</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Millennium Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nepera Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norlite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norlite Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Listed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Peoria Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Perma-Fix Treatment Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Petro Chem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phibro-Tech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Philip Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phillip Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pollution Control Industries (PCI)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Potomac Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proliquids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quemetco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R3 Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reclaimed Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recyclights</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redbud Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red Earth Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regeneration Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Republic Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Republic Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revere Refining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rhodia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rineco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rollins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Romic Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ross Incineration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RS Used oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Safety-Kleen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S and W Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SET Environmental (Treatment One)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shamrock Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siemens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solite Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solvent Recovery Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solvent Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Southeastern Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Waste Disposal, Inc. (SWDI)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPSA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strong Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Superior Special Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systech Corporation (LaFarge)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teris</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas Ecologists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas Molecular</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Environmental Quality Company (EQ)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Treatment One</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tri State</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Oil Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Univar USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Ecology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USL City Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Veolia ES Tech Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vexor Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLS Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vulcan Materials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wabash Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Control Specialists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Recovery Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wayne Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Central Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>World Resource Corporation (WRC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WRR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zinc Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PercentOther__c</fullName>
+        <externalId>false</externalId>
+        <label>% Other</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PhysicalState__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical State</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Lab Pack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liquid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semi-Solid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Powder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sludge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liquid/Solid Mixture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PriceUOM__c</fullName>
+        <externalId>false</externalId>
+        <label>$ per UOM</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PricingUOM__c</fullName>
+        <externalId>false</externalId>
+        <label>$ UOM</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Burlap, Cloth, Paper, Plastic Bag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cubic Meters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cubic Yards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cylinders</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dump Truck</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fiberboard Or Plastic Drum, Barrel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fiber Or Plastic Boxes, Cartons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gallons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kilogram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Linear Foot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metal Boxes, Cartons, Cases</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metal Drums, Barrels, Kegs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metric Tons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pounds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rail Cars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tanks Portable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wooden Boxes, Cartons, Cases</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wooden Drums, Barrels, Kegs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ServiceProvider__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Provider</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Advanced Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AGFA Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agmet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amerifuel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMS Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aristech Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ash Grove Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ashland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A-Tech Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ausimont USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barton Solvents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beaver Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blacklidge Emulsions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brenntag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bridgeport United Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burlington Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Casie Ecology Oil Salvage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chem Con-Georgia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Pollution Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Solvents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Waste Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chem-Pak Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemtron</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chesapeake Waste Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chief Wastes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clean Harbors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coleman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Continental Cement Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Covanta Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyanokem Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyclechem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyro Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Demenno Kerdoon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disposal Systems Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSM Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dukes Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dupont</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dynecol Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ecoflo Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Effective Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emerald Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Encycle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ensco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirocare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental Compliance Corp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosafe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosolve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirosota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirotech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Envirotrol Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EOG Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Essroc Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Excel TSD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exide Corp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fairbanks Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ferguson Environmental (FER)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fielding Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Freehold Cartage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Future Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GCL Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giant Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giant Resource Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GNB Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Great Lakes Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenlights</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenway Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gulf Coast Recycling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HazChem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heritage Treatment Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heritage-WTI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holnam Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hukill Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrite Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydromet Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Waste Services (IWS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inmetco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intergulf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jacobus Quick Fuel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kaiser Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keystone Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lederle Laboratories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leisch &amp; Associates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lone Star Alternate Fuels</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lone Star Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LWD, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M&amp;M Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M&amp;M Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marathon Ashland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marisol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Martinez Refining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>McWhorter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metalico</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MFR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Michigan Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Michigan Recovery Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MicroNutrients</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Millennium Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nepera Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norlite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norlite Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Listed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Peoria Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Perma-Fix Treatment Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Petro Chem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phibro-Tech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Philip Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phillip Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pollution Control Industries (PCI)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Potomac Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proliquids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quemetco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R3 Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reclaimed Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recyclights</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redbud Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red Earth Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regeneration Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Republic Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Republic Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revere Refining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rhodia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rineco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rollins</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Romic Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ross Incineration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RS Used oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Safety-Kleen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S and W Waste</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SET Environmental (Treatment One)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siemens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solite Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solvent Recovery Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solvent Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Southeastern Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Waste Disposal, Inc. (SWDI)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPSA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strong Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Superior Special Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systech Corporation (LaFarge)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teris</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas Ecologists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas Molecular</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Environmental Quality Company (EQ)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Treatment One</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tri State</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United Oil Recovery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Univar USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Ecology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USL City Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Veolia ES Tech Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vexor Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vopak Logistics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vulcan Materials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wabash Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Control Specialists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Recovery Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wayne Disposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Central Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>World Resource Corporation (WRC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WRR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zinc Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Service_Provider_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Provider</label>
+        <referenceTo>Vendor__c</referenceTo>
+        <relationshipLabel>Waste Streams (Service Provider Lookup)</relationshipLabel>
+        <relationshipName>Waste_Streams1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UCodes__c</fullName>
+        <externalId>false</externalId>
+        <label>U Codes</label>
+        <picklist>
+            <picklistValues>
+                <fullName>U001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U002</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U003</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U004</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U005</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U006</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U007</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U008</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U009</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U021</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U022</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U023</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U024</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U025</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U026</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U027</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U028</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U029</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U030</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U031</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U032</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U033</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U034</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U035</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U036</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U037</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U038</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U039</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U041</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U042</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U043</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U044</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U045</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U046</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U047</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U048</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U049</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U050</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U051</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U052</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U053</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U055</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U056</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U057</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U058</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U059</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U060</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U061</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U062</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U063</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U064</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U066</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U067</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U068</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U069</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U070</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U071</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U072</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U073</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U074</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U075</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U076</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U077</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U078</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U079</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U080</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U081</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U082</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U083</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U084</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U085</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U086</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U087</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U088</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U089</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U090</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U091</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U092</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U093</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U094</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U095</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U096</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U097</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U098</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U099</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U101</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U102</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U103</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U105</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U106</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U107</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U108</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U109</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U110</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U111</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U112</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U113</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U114</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U115</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U116</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U117</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U118</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U119</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U120</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U121</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U122</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U123</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U124</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U125</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U126</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U127</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U128</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U129</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U130</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U131</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U132</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U133</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U134</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U135</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U136</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U137</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U138</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U139</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U140</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U141</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U142</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U143</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U144</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U145</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U146</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U147</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U148</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U149</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U150</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U151</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U152</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U153</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U154</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U155</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U156</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U157</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U158</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U159</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U160</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U161</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U162</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U163</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U164</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U165</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U166</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U167</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U168</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U169</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U170</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U171</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U172</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U173</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U174</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U176</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U177</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U178</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U179</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U180</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U181</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U182</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U183</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U184</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U185</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U186</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U187</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U188</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U189</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U190</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U191</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U192</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U193</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U194</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U196</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U197</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U200</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U201</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U202</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U203</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U204</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U205</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U206</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U207</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U208</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U209</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U210</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U211</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U213</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U214</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U215</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U216</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U217</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U218</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U219</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U220</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U221</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U222</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U223</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U225</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U226</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U227</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U228</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U234</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U235</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U236</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U237</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U238</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U239</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U240</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U243</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U244</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U246</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U247</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U248</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U249</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U271</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U279</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U328</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U353</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U359</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U383</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U404</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U410</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U411</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UserLastModifiedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to last non-System Admin to modify this CPP. Modifiable by Apex only.</description>
+        <externalId>false</externalId>
+        <label>User Last Modified By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Waste_Streams</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UserLastModifiedDate__c</fullName>
+        <description>Non-Admin user who last modified this record.</description>
+        <externalId>false</externalId>
+        <label>User Last Modified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WasteStreamName__c</fullName>
+        <externalId>false</externalId>
+        <label>Waste Stream Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Waste Stream</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>WasteStreamName__c</columns>
+        <columns>Opportunity_Name__c</columns>
+        <columns>AnnualGeneratedPounds__c</columns>
+        <columns>ContainerType__c</columns>
+        <columns>DisposalTechnology__c</columns>
+        <columns>ServiceProvider__c</columns>
+        <columns>CompetitorTSDF__c</columns>
+        <columns>PartnerTSDF__c</columns>
+        <columns>Comments__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>EventBusiness</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>WasteStreamName__c</columns>
+        <columns>Opportunity_Name__c</columns>
+        <columns>AnnualGeneratedPounds__c</columns>
+        <columns>AnnualGeneratedUOM__c</columns>
+        <columns>PhysicalState__c</columns>
+        <columns>ServiceProvider__c</columns>
+        <columns>CompetitorTSDF__c</columns>
+        <columns>PartnerTSDF__c</columns>
+        <columns>Comments__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <label>Event Business</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Waste_Streams</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>WasteStreamName__c</columns>
+        <columns>Opportunity_Name__c</columns>
+        <columns>AnnualGeneratedPounds__c</columns>
+        <columns>CompetitorTSDF__c</columns>
+        <columns>ServiceProvider__c</columns>
+        <columns>PartnerTSDF__c</columns>
+        <columns>EventOnGoingBusiness__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Waste Streams</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>ServiceProviderNOTUnivar</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>WasteStreamName__c</columns>
+        <columns>Opportunity_Name__c</columns>
+        <columns>AnnualGeneratedPounds__c</columns>
+        <columns>ContainerType__c</columns>
+        <columns>DisposalTechnology__c</columns>
+        <columns>ServiceProvider__c</columns>
+        <columns>CompetitorTSDF__c</columns>
+        <columns>PartnerTSDF__c</columns>
+        <columns>PriceUOM__c</columns>
+        <columns>PricingUOM__c</columns>
+        <columns>Comments__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ServiceProvider__c</field>
+            <operation>notEqual</operation>
+            <value>Univar USA</value>
+        </filters>
+        <label>Service Provider NOT Univar</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>WasteStreamsModifiedLast30Days</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>WasteStreamName__c</columns>
+        <columns>Opportunity_Name__c</columns>
+        <columns>ServiceProvider__c</columns>
+        <columns>CompetitorTSDF__c</columns>
+        <columns>PartnerTSDF__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>AnnualGeneratedUOM__c</columns>
+        <columns>EventOnGoingBusiness__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <label>Waste Streams Modified Last 30 Days</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>WasteStreamsbyCodes</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>WasteStreamName__c</columns>
+        <columns>Opportunity_Name__c</columns>
+        <columns>DCodes__c</columns>
+        <columns>FCodes__c</columns>
+        <columns>KCodes__c</columns>
+        <columns>PCodes__c</columns>
+        <columns>UCodes__c</columns>
+        <columns>DisposalTechnology__c</columns>
+        <columns>ServiceProvider__c</columns>
+        <columns>CompetitorTSDF__c</columns>
+        <columns>PartnerTSDF__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Waste Streams by Codes</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>xChemCareCPPstest</fullName>
+        <columns>NAME</columns>
+        <columns>AccountId__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UserLastModifiedBy__c</columns>
+        <columns>UserLastModifiedDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UserLastModifiedBy__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>*** Wastestreams for UserLastMod Testing</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Waste Stream CPP #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Waste Streams</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>AccountId__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>WasteStreamName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ServiceProvider__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PartnerTSDF__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ContainerType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AnnualGeneratedPounds__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>AccountId__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>WasteStreamName__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ServiceProvider__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PartnerTSDF__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ContainerType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AnnualGeneratedPounds__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>WasteStreamName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ServiceProvider__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CompetitorTSDF__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PartnerTSDF__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EstimatedSalesValue__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Create_Opportunity_URL</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Opportunity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/006/e?accid={!ChemCare__c.AccountIdId__c}&amp;opp3={!ChemCare__c.WasteStreamName__c} - {!ChemCare__c.AccountId__c}&amp;00N30000001mdG4={!ChemCare__c.AnnualGeneratedPounds__c}&amp;opp11=Build&amp;opp14={!ChemCare__c.Comments__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Waste_Stream</fullName>
+        <availability>online</availability>
+        <description>New Waste Stream button to automatically populate the opportunity and account details.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Waste Stream</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!URLFOR($Action.ChemCare__c.New, ChemCare__c.Id, [CF00Na0000002fWjS_lkid = Opportunity.Id,CF00Na0000002fWjS= Opportunity.Name, CF00N30000000jMQz_lkid = Account.Id, CF00N30000000jMQz = Account.Name, retURL = Opportunity.Id  ])}</url>
+    </webLinks>
+</CustomObject>

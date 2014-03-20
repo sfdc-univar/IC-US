@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<HTML> 
+<HEAD> 
+<TITLE></TITLE> 
+<script language="Javascript"> 
+function go() { 
+window.opener.focus(); 
+var url = "/00O30000003Kchn?" 
++ "pc0=PARENT_ID&pn0=eq&pv0={!Account.Id}&" 
++ "pc1=ACCOUNT_ID&pn1=eq&pv1={!Account.Id}&" 
++ "bool_filter=" + escape("1 OR 2"); 
+window.opener.location.href = url; 
+self.close(); 
+} 
+go(); 
+
+</script> 
+</HEAD> 
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000"><p align="center">Please wait...</p></BODY> 
+</HTML>

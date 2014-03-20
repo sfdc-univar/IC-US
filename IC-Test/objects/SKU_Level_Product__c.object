@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>SKU Level Products used to relate to Product Master and make available product SKUs to the USPOT tool.
+Object &apos;Name&apos; field comes from the IW  &quot;** COMPLETE PRODUCT NAME **&quot; field, which is the UVX Product Name (25 chars) concatenated with the UVX Secondary (or Additional) Product Name (25 chars).</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Product_SKU__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Product SKU#</label>
+        <length>6</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SFDC_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SFDC Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>SKU-Level Products</relationshipLabel>
+        <relationshipName>Product_Details</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UVX_Product_Family_Code__c</fullName>
+        <description>Product Family Code from the UVX.  If there&apos;s a difference between this and the Product Family Code on the parent SFDC Product, then either the Family Code on the parent product is wrong, or this should roll up to a different parent</description>
+        <externalId>false</externalId>
+        <label>UVX Product Family Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UVX_Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <label>UVX Product Family</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UVX_Product_Name_1__c</fullName>
+        <description>Directly from DCS. Used only for product matching logic.</description>
+        <externalId>false</externalId>
+        <label>UVX Product Name 1</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UVX_Product_Name_2__c</fullName>
+        <description>Directly from DCS. Used only for product matching logic.</description>
+        <externalId>false</externalId>
+        <label>UVX Product Name 2</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UVX_Product_Short_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>UVX Product Short Name</label>
+        <length>51</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UVX_Vendor_Name__c</fullName>
+        <description>Vendor Name from the UVX</description>
+        <externalId>false</externalId>
+        <label>UVX Vendor Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UVX_Vendor_Number__c</fullName>
+        <description>In case there was no matching Vendor lookup record with this number.
+Comes from IW</description>
+        <externalId>false</externalId>
+        <label>UVX Vendor Number</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Vendor</label>
+        <referenceTo>Vendor__c</referenceTo>
+        <relationshipLabel>SKU-Level Products</relationshipLabel>
+        <relationshipName>SKU_Level_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>SKU-Level Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product_SKU__c</columns>
+        <columns>SFDC_Product__c</columns>
+        <columns>UVX_Product_Family__c</columns>
+        <columns>UVX_Product_Family_Code__c</columns>
+        <columns>UVX_Product_Short_Name__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Unmatched_SKU_Level_Products1</fullName>
+        <columns>NAME</columns>
+        <columns>Product_SKU__c</columns>
+        <columns>SFDC_Product__c</columns>
+        <columns>UVX_Product_Family__c</columns>
+        <columns>UVX_Product_Family_Code__c</columns>
+        <columns>UVX_Product_Short_Name__c</columns>
+        <columns>UVX_Vendor_Number__c</columns>
+        <columns>Vendor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SFDC_Product__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>All Unmatched SKU-Level Products</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Unmatched_SKU_Level_Products</fullName>
+        <columns>NAME</columns>
+        <columns>Product_SKU__c</columns>
+        <columns>SFDC_Product__c</columns>
+        <columns>UVX_Product_Family__c</columns>
+        <columns>UVX_Product_Family_Code__c</columns>
+        <columns>UVX_Product_Short_Name__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SFDC_Product__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Unmatched SKU-Level Products</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>UVX SKU Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>SKU-Level Products</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

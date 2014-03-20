@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Used to roll Account Sales info from the &quot;Customer&quot; Account types up to the &quot;Customer Group&quot; Account.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Account Sales Roll-Up</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

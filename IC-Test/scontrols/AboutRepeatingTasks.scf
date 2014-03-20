@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<!--  Replace all instances of Recurring Tasks with your app's name -->
+<title>Recurring Tasks Splash Page</title>
+
+<!--  Do not edit this section below -->
+<style type="text/css" media="all">
+body#splashBody {
+  font-family: arial, helvetica, verdana, sans-serif;
+  font-size: 80%;
+  margin: 0;
+  padding: 0;
+  width: 97%;
+}
+img {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+h1.appName {
+  font-weight: bold;
+  font-size: 100%;
+  color: #FFF;
+  background-color: #638658;
+  padding: 10px 0 10px 8px;
+  margin: 0 0 15px 0;
+}
+h2 {
+  color: #FFF;
+  padding: 2px 0 2px 8px;
+  margin-top: 0;
+  background-color: #638658;
+  font-size: 90%;
+}
+h2.exchangeTitle {
+  background-color: #999;
+}
+#splash {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#splash td {
+  margin: 0;
+  padding: 0;
+}
+#splash #splashLeft {
+  vertical-align: top;
+  background-color: #F3F3EC;
+  border-bottom: 2px solid #638658;
+}
+#splash #splashCenter {
+  display:block;
+  width: 15px;
+  background-color: #FFF;
+}
+#splash #splashRight {
+  vertical-align: top;
+  background-color: #E8E8E8;
+  border-bottom: 2px solid #999;
+}
+#splash #splashLeft .about, #splash #splashLeft .exchange {
+  width: 100%;
+}
+#splash #splashRight .exchange p {
+  font-size: 90%;
+  color: #333;
+  margin: 0 10px 12px 10px;
+  line-height: 1.4em;
+}
+#splash #splashLeft .about p {
+  font-size: 90%;
+  color: #333;
+  margin: 0 10px 12px 15px;
+  line-height: 1.4em;
+}
+#splash #splashLeft .about fieldset {
+  color: #333;
+  margin: 0 15px 10px 15px;
+  padding: 2px;
+}
+#splash #splashLeft .about fieldset ul {
+  padding: 0;
+  margin: .3em 0 .3em 2em;
+}
+#splash #splashLeft .about fieldset li {
+  padding: 0;
+  margin: 0;
+}
+#splash #splashLeft .about legend {
+  font-size: 90%;
+  color: #333;
+  font-weight: bold;
+}
+.imgDiv {
+  text-align: center;
+  padding: 0 0 10px 0; 
+}
+
+</style>
+<!--  Do not edit this section above -->
+</head>
+
+<body id="splashBody">
+<!-- <h1 class="appName">Recurring Tasks from Salesforce.com</h1> -->
+<table id="splash" cellspacing="0"> 
+<tr>
+<td id="splashLeft" width="100%">
+<div class="about">
+<h2>About Recurring Tasks</h2>
+<p>
+Recurring tasks are a series of identical tasks set to a specific frequency of recurrence.  You can create recurring tasks from the Custom Links field on contact and account detail pages.
+</p>
+<p>
+To configure this feature, you will need to modify the following customization options within your organization by clicking Setup | Customize:
+</p>
+<p>
+</p>
+
+<br><ol>
+
+<!-- include specific Help and/or Support contact information below -->
+
+<li>Modify the <b>Account</b> and <b>Contact</b> page layouts to include the <b>Create Recurring Task</b> custom link.</li>
+
+<li>Create an <a target="_blank" href="/home/activityfieldlist.jsp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DActivity&type=Task&setupid=ActivityFields">
+	activity custom field</a> with the following attributes:
+	<ul >
+  	<li>Create a field of type: <b>Checkbox</b></li>
+  	<li>Label: Is Recurring</li>
+    <li>Name: <b>IsRecurring</b>  </li>
+    <li>Field-level security: Visible for necessary profiles</li>
+    <li>Do not add this field to page layouts</li>	
+	</ul> 
+</li>
+
+<li>Create an <a target="_blank" href="/home/activityfieldlist.jsp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DActivity&type=Task&setupid=ActivityFields">
+	activity custom field</a> with the following attributes:
+	<ul >
+  	<li>Create a field of type: <b>Text</b></li>
+	<li>Length: 18</li>
+  	<li>Label: TaskRecurrenceId </li>
+    <li>Name: <b>TaskRecurrenceId</b>  </li>
+    <li>Check the <b>External ID</b> checkbox for this field</li>
+    <li>Field-level security: Visible for necessary profiles</li>
+    <li>Do not add this field to page layouts</li>
+	</ul> 
+</li>
+
+<li>Create an <a target="_blank" href="/home/activityfieldlist.jsp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DActivity&type=Task&setupid=ActivityFields">
+	activity custom field</a> with the following attributes:
+	<ul >
+  	<li>Create a field of type: <b>Text</b></li>
+	<li>Length: 150</li>
+  	<li>Label: Series Description  </li>
+    <li>Name: <b>TaskSeriesDescribe</b>  </li>
+    <li>Field-level security: Visible for necessary profiles</li>
+    <li>Add this field to page layouts</li>	
+	</ul> 
+</li>
+
+<li>Create an <a target="_blank" href="/home/activityfieldlist.jsp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DActivity&type=Task&setupid=ActivityFields">
+	activity custom field</a> with the following attributes:
+	<ul >
+  	<li>Create a field of type: <b>Formula</b> returning <b>Text</b>
+  	<li>Label: Task Series  </li>
+    <li>Name: SeriesAccess  </li>
+    <li>Formula Return Type: Text</li>
+    <li>Formula (You may use copy and paste):
+    <pre>
+IF ( { !IsRecurring__c } ,
+IMAGE("/img/recurring_activity.gif", "Recurring")
+& " " &
+HYPERLINK("/servlet/servlet.Integration?lid=00b30000000sGR7&eid="& { !TaskRecurrenceId__c } ,
+"Delete Series","_top") & " " &
+HYPERLINK("/servlet/servlet.Integration?lid=00b30000000sGRA&eid="& { !TaskRecurrenceId__c } ,
+"Change Series Owner","_top"),
+"Individual Task"
+)
+</pre>
+    </li>
+	<li>Field-level security: Visible for necessary profiles</li>
+	<li>Add this field to all <b>Task</b> page layouts</li>	
+    
+	</ul> 
+</li>
+<li>Optionally, to create a link on your home page which creates recurring tasks:
+<ul>
+<li>Copy: <br><span style="font-family:Courier New,monospace" id=thislink></span></li>
+<li>Click Setup | Customize | Home | Custom Links and create a custom link called Recurring Tasks</li>
+<li>Paste: <br><span style="font-family:Courier New,monospace" id=thislink2></span><br>into the Link URL area and save the custom link</li>
+<li>Click Setup | Customize | Home | Home Page Components | New and create a home page component called Recurring Tasks</li>
+<li>Select Links as the type and save the component</li>
+<li>Click Setup | Customize | Home | Home Page Layouts and select the page layout where you want the Recurring Tasks custom link to display</li>
+<li>Select Recurring Tasks as a component to show on the page layout</li>
+</ul>
+</ol>
+
+Note: For more information about modifying page layouts and creating custom fields, see the Salesforce online help.  
+<br></div>
+</td>
+
+<td><div id="splashCenter">&nbsp;</div></td>
+
+
+</tr>
+</table>
+
+<script language="javascript" type="text/javascript"> 
+	document.getElementById('thislink').innerHTML = 
+		window.location.protocol + "//" + window.location.hostname + "/servlet/servlet.Integration?lid=01N30000000D12m";
+	document.getElementById('thislink2').innerHTML = 
+		window.location.protocol + "//" + window.location.hostname + "/servlet/servlet.Integration?lid=01N30000000D12m";
+
+</script>
+
+</body>
+</html>

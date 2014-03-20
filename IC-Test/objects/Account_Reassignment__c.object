@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.RecordType.Name</formula>
+        <label>Account Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Reassignments</relationshipLabel>
+        <relationshipName>Account_Reassignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approved_Date__c</fullName>
+        <description>Date a reassignment request is Approved by all 4 managers</description>
+        <externalId>false</externalId>
+        <label>Approved Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <description>Date a reassignment request is now approved and completed.</description>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_Manager_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Owner Manager Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_Manager_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Owner Manager Approved Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Owner Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_RSD_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Owner RSD Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_RSD_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Owner RSD Approved Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_RSD__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Owner RSD</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_RVP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Owner RVP</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments6</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Owner_Role__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Owner.UserRole.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Owner Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments5</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Ship_To_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.CustomerShipTo__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Ship To Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_in_Approved_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Status__c,&quot;Drafted&quot;), 0, 
+IF( ISPICKVAL(Status__c, &quot;Pending Approval&quot;), 0,
+IF( ISPICKVAL(Status__c, &quot;Approved&quot;),  TODAY() -  Approved_Date__c , 
+IF( ISPICKVAL(Status__c, &quot;Rejected&quot;), 0, 
+0 
+))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days in Approved Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_in_Pending_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Status__c,&quot;Drafted&quot;), 0,
+IF( ISPICKVAL(Status__c, &quot;Pending Approval&quot;), TODAY() - Pending_Approval_Date__c,
+IF( ISPICKVAL(Status__c, &quot;Approved&quot;),  Approved_Date__c - Pending_Approval_Date__c, 
+IF( ISPICKVAL(Status__c, &quot;Rejected&quot;),  Rejected_Date__c - Pending_Approval_Date__c,
+0
+))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days in Pending Approval Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Owner_Manager_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>New Owner Manager Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>New_Owner_Manager_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>New Owner Manager Approved Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>New_Owner_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Owner Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>New_Owner_RSD_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>New Owner RSD Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>New_Owner_RSD_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>New Owner RSD Approved Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>New_Owner_RSD__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Owner RSD</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>New_Owner_RVP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Owner RVP</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments7</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>New_Owner_Role__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Owner__r.UserRole.Name</formula>
+        <label>New Owner Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Reassignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Approval_Date__c</fullName>
+        <description>Date that the user first submits request for approval</description>
+        <externalId>false</externalId>
+        <label>Pending Approval Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rejected_Date__c</fullName>
+        <description>Date a reassignment request is first rejected</description>
+        <externalId>false</externalId>
+        <label>Rejected Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rejection_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejection Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ShipToNumber__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.ShipToNumber__c</formula>
+        <label>Ship To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Statuses will dynamically change depending on stage in the Approval process</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Account Reassignment</label>
+    <listViews>
+        <fullName>Accounts_Newly_Reassigned_to_Me_TEMPLATE</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Customer_Ship_To_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>New_Owner__c</columns>
+        <columns>Approved_Date__c</columns>
+        <columns>Completed_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>New_Owner__c</field>
+            <operation>equals</operation>
+            <value>Rachel Kanter</value>
+        </filters>
+        <label>Accounts Newly Reassigned to Me TEMPLATE</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Accounts_Reassigned_From_Me_TEMPLATE</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Customer_Ship_To_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>New_Owner__c</columns>
+        <columns>Status__c</columns>
+        <columns>Rejected_Date__c</columns>
+        <columns>Approved_Date__c</columns>
+        <columns>Completed_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Current_Owner__c</field>
+            <operation>equals</operation>
+            <value>Rachel Kanter</value>
+        </filters>
+        <label>Accounts Reassigned From Me TEMPLATE</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Reassignment_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Customer_Ship_To_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>Current_Owner_Manager__c</columns>
+        <columns>Current_Owner_RSD__c</columns>
+        <columns>New_Owner__c</columns>
+        <columns>New_Owner_Manager__c</columns>
+        <columns>New_Owner_RSD__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Reassignment Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Approved_Account_Reassignment_Request</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Customer_Ship_To_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>New_Owner__c</columns>
+        <columns>Status__c</columns>
+        <columns>Pending_Approval_Date__c</columns>
+        <columns>Days_in_Pending_Approval_Status__c</columns>
+        <columns>Approved_Date__c</columns>
+        <columns>Days_in_Approved_Status__c</columns>
+        <columns>Rejected_Date__c</columns>
+        <columns>Completed_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>My Approved Account Reassignment Request</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Pending_Reassignment_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Customer_Ship_To_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>New_Owner__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Pending_Approval_Status__c</columns>
+        <columns>Pending_Approval_Date__c</columns>
+        <columns>Days_in_Approved_Status__c</columns>
+        <columns>Approved_Date__c</columns>
+        <columns>Rejected_Date__c</columns>
+        <columns>Completed_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Approval</value>
+        </filters>
+        <label>My Pending Reassignment Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Reassignment_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Customer_Ship_To_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>Current_Owner_Manager__c</columns>
+        <columns>Current_Owner_RSD__c</columns>
+        <columns>New_Owner__c</columns>
+        <columns>New_Owner_Manager__c</columns>
+        <columns>New_Owner_RSD__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Reassignment Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Rejected_Reassignment_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Customer_Ship_To_Number__c</columns>
+        <columns>Account__c</columns>
+        <columns>Current_Owner__c</columns>
+        <columns>New_Owner__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Pending_Approval_Status__c</columns>
+        <columns>Pending_Approval_Date__c</columns>
+        <columns>Days_in_Approved_Status__c</columns>
+        <columns>Approved_Date__c</columns>
+        <columns>Rejected_Date__c</columns>
+        <columns>Completed_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </filters>
+        <label>My Rejected Reassignment Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>AR-{0000000000}</displayFormat>
+        <label>Account Reassignment Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Reassignments</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>New_Owner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Pending_Approval_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Rejected_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Approved_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Completed_Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>New_Reassignment_Request</listViewButtons>
+        <listViewButtons>Reassignment_Requests_Pending_My_Approval</listViewButtons>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>New_Owner__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Pending_Approval_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Rejected_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Approved_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Completed_Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>New_Owner__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Pending_Approval_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Rejected_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Approved_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Completed_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>New_Owner__c</searchFilterFields>
+        <searchFilterFields>Pending_Approval_Date__c</searchFilterFields>
+        <searchFilterFields>Rejected_Date__c</searchFilterFields>
+        <searchFilterFields>Approved_Date__c</searchFilterFields>
+        <searchFilterFields>Completed_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>New_Owner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Pending_Approval_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Rejected_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Approved_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Completed_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>CantWithdrawIfCompletedStatus</fullName>
+        <active>true</active>
+        <description>Account Reassignments can&apos;t be withdrawn if the Status = Complete</description>
+        <errorConditionFormula>AND(ISCHANGED(Status__c),
+ISPICKVAL(Status__c, &quot;Withdrawn&quot;),
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Complete&quot;))</errorConditionFormula>
+        <errorMessage>Account Reassignments that have been completed cannot be withdrawn.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Reassignment_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Reassignment Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>window.location = &apos;AccountReassignmentRequest&apos;;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reassignment_Requests_Pending_My_Approval</fullName>
+        <availability>online</availability>
+        <description>All Reassignment Requests that are pending your Approval/Rejection</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reassignment Requests Pending My Approval</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>window.location = &apos;/apex/AccountReassignmentApproval&apos;;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Withdraw_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Withdraw Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)}
+
+var ar = new sforce.SObject(&apos;Account_Reassignment__c&apos;);
+ar.Id = &apos;{!Account_Reassignment__c.Id}&apos;;
+ar.Status__c = &apos;Withdrawn&apos;;
+var result = sforce.connection.update([ar]);
+
+if (result[0].getBoolean(&quot;success&quot;))
+{
+  window.location.reload();
+} 
+else
+{
+  var errors = result[0].errors;
+  var errorDiv = document.getElementById(&apos;errorDiv_ep&apos;);
+  errorDiv.innerHTML = errors.message;
+  errorDiv.style.display = &apos;block&apos;;
+}</url>
+    </webLinks>
+</CustomObject>
