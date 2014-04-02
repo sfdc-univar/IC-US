@@ -1,0 +1,17 @@
+<apex:page standardController="Account" tabStyle="Sales_Analysis__tab">
+<style>
+      .activeTab {background-color: #236FBD;border:double #236FBD;color:white; background-image:none;white-space:nowrap;cursor:pointer;border-width:thin thick;border-top-right-radius: 10px;-moz-border-radius-topright: 10px;}
+     .inactiveTab {background-color:#DEEFF4;color:black; background-image:none;white-space:nowrap;cursor:pointer;border-top-right-radius: 10px;-moz-border-radius-topright: 10px;}
+     .eSubheader smH{background-color: transparent}
+     .eSubsection {background-color: transparent}
+     .labelCol vfLabelColTextWrap{font-size:12px;}
+     .dataCol {font-size:100%;}
+     .rich-tabpanel-content {background-color:#FFFFFF;font-size:12px;)
+     .body {background-color:#FFFFFF;)
+     .noList{list-style-img: url('/profilephoto/005/T');padding-left:0px}
+      </style>
+      
+    <apex:iframe src="https://tableau.univar.com/t/sales/workbooks?project=5" scrolling="true" height="1500px"/>
+
+
+</apex:page>

@@ -1,0 +1,111 @@
+<apex:page controller="AcctReassignApprovalController" tabStyle="Account_Reassignments__tab">
+    <apex:sectionHeader title="Account Reassignment" subtitle="Requests Pending Approval"/>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages />
+            
+            <apex:pageBlockSection columns="1" rendered="{!ArWrappers.size==0}">
+            	You have no pending Account Reassignment Requests.
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="pbSection" columns="1" rendered="{!ArWrappers.size>0}">
+                <apex:pageBlockTable id="pbTable" border="1" value="{!ArWrappers}" var="ara">
+                    <apex:column style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}">
+                        <apex:facet name="header">
+							<apex:inputCheckbox onclick="selectCheckboxes(this,'inputId')" />
+                            <!--<apex:inputCheckbox onclick="selectCheckboxes(this,'inputId')" disabled="{!IF(UpdateSuccess,true,false)}"/>-->
+                       </apex:facet>
+                       <apex:inputCheckbox value="{!ara.Selected}" id="inputId" disabled="{!IF(UpdateSuccess && ara.Selected,true,false)}"/>
+                    </apex:column>
+					<apex:column headerValue="Account Reassignment" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}">
+						<apex:outputLink value="/{!ara.AcctReassign.Id}"> {!ara.AcctReassign.Name} </apex:outputLink>
+					</apex:column>
+                    <!--<apex:column value="{!ara.AcctReassign.Name}" style="{!IF(UpdateSuccess && ara.Selected,'background:lightgray','')}"/>-->
+					<apex:column headerValue="Requestor" value="{!ara.AcctReassign.CreatedById}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}" />
+                    <apex:column value="{!ara.AcctReassign.Account__r.CustomerShipTo__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="Account Name" value="{!ara.AcctReassign.Account__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}" />
+                    <apex:column headerValue="Ship to City" value="{!ara.AcctReassign.Account__r.ShippingCity}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="Ship to State" value="{!ara.AcctReassign.Account__r.ShippingStateCode}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="12 Mo. Sales" value="{!ara.AcctReassign.Account__r.AcornRolling12MoSales__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column value="{!ara.AcctReassign.Current_Owner__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="Current Owner District" value="{!ara.AcctReassign.Current_Owner__r.User_District__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="Current Owner Sales Manager" value="{!ara.AcctReassign.Current_Owner_Manager__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="Current Owner RSD" value="{!ara.AcctReassign.Current_Owner_RSD__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column value="{!ara.AcctReassign.New_Owner__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="New Owner District" value="{!ara.AcctReassign.New_Owner__r.User_District__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="New Owner Sales Manager" value="{!ara.AcctReassign.New_Owner_Manager__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="New Owner RSD" value="{!ara.AcctReassign.New_Owner_RSD__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                    <apex:column headerValue="Approval Status" value="{!ara.AcctReassign.Status__c}" style="{!IF(UpdateSuccess && ara.Selected,'background:' + ara.BackgroundColor,'')}"/>
+                </apex:pageBlockTable>
+                <apex:pageBlockSectionItem rendered="{!ShowRejectReason}">
+                    <apex:outputLabel >Rejecton Reason</apex:outputLabel>
+                    <apex:inputText id="ifRejectReason" value="{!RejectReason}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+			<apex:pageBlockButtons location="Bottom">
+                <apex:commandButton action="{!approve}" value="Approve" rendered="{!ArWrappers.size>0}" rerender="pbSection, pbTable"/>
+                <apex:commandButton action="{!showPopup}" value="Reject" rendered="{!ArWrappers.size>0}" rerender="tstpopup"/>
+                <apex:commandButton action="{!redirectToList}" value="Exit" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+		<!--
+		<apex:commandButton value="Show Pop up" action="{!showPopup}" rerender="tstpopup"/>
+        <apex:pageBlock >
+            
+        </apex:pageBlock>
+		-->
+		<apex:outputPanel id="tstpopup">
+        	<apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                <apex:pageBlock >
+				<apex:pageBlockSection columns="1">
+				Please enter a rejection reason.<br/>
+				<apex:inputText style="width:300px" id="ifRejectReason2" value="{!RejectReason}" required="true"/>
+				<apex:commandButton value="Reject" action="{!RejectNew}" rerender="tstpopup, pbSection, pbTable"/>
+				</apex:pageBlockSection>
+				</apex:pageBlock>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:form>
+    <script type="text/javascript">
+        function selectCheckboxes(inpt,receivedInptID)
+        {
+         var inputCheckBox = document.getElementsByTagName("input");                 
+         for(var i=0; i<inputCheckBox.length; i++)
+          {         
+           if(inputCheckBox[i].id.indexOf(receivedInptID)!=-1 && inputCheckBox[i].disabled != true)
+		   {                                    
+              inputCheckBox[i].checked = inpt.checked;
+           }
+         }
+        }
+    </script>
+	<style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+    </style>
+</apex:page>

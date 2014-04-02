@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<link  href="/dCSS/Theme2/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" ><link  href="/dCSS/Theme2/default/custom.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" ><link  href="/dCSS/Theme2/default/setup.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" ><link  href="/css/assistive.css" type="text/css" media="aural,braille,embossed" rel="stylesheet" >
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<script src="https://www.salesforce.com/services/lib/ajax/beta3.3/sforceclient.js" type="text/javascript"></script>
+
+<style>
+	body{font-family:verdana; font-size:10pt}
+</style>
+
+
+</head>
+
+<body>
+
+<form name="feedbackform" action="http://www.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" onsubmit="return validate()">
+
+
+<input type=hidden name="orgid" value="00D300000006opt">
+<input type=hidden name="retURL" value="http://www.google.com">
+<input type="hidden"  id="external" name="external" value="0">
+
+<table>
+
+	<tr height="45" valign="center"><td colspan="2"><b>Contact Information:</b></td></tr>
+
+	<tr><td><label for="name">Name<font color="red">*</font></label></td><td><input  maxlength="80" type="text" id="name" size="30" name="name"></td></tr>
+
+	<tr><td><label for="email">Email<font color="red">*</font></label></td><td><input  maxlength="80" type="text" id="email" size="30" name="email"></td></tr>
+
+	<tr><td><label for="phone">Phone</label></td><td><input  maxlength="40" type="text" id="phone" size="30" name="phone"></td></tr>
+
+	<tr><td><label for="company">Company<font color="red">*</font></label></td><td><input  maxlength="80" type="text" id="company" size="30" name="company"></td></tr>
+
+	<tr height="45" valign="center"><td colspan="2"><b>Feedback Details:</b></td></tr>
+
+	<tr><td>Product:</td><td><select  title="Product" id="00N30000001RHSK" name="00N30000001RHSK"><option value="">--None--</option><option value="Draggin' Role" SELECTED>Draggin' Role</option>
+</select></td></tr>
+
+	<tr><td><label for="reason">Reason<font color="red">*</font></label></td><td><select  id="reason" name="reason"><option value="Bug" SELECTED>Bug</option>
+<option value="Enhancement Suggestion">Enhancement Suggestion</option>
+<option value="Other Feedback">Other Feedback</option>
+</select></td></tr>
+
+	<tr><td><label for="subject">Subject<font color="red">*</font></label></td><td><input  maxlength="255" type="text" id="subject" size="30" name="subject"></td></tr>
+
+	<tr><td><label for="description">Description</label></td><td><textarea cols="25" rows="9" name="description"></textarea></td></tr>
+
+<tr><td colspan="2" align="center"><br>
+<input class="btn" type="submit" name="submit" value="Submit Feedback"></td></tr>
+</table>
+
+
+<script type="text/javascript">
+
+function validate(){
+
+	if(document.feedbackform.name.value==""){
+		alert("Please Enter Your Name");
+		return false;
+	}
+
+	else if(document.feedbackform.email.value==""){
+		alert("Please Enter Your Email");
+	}
+
+	else{
+		return true;
+	}
+}
+
+function init(){
+
+	var result=sforceClient.getUserInfo();
+
+	if(result!=null){
+		document.feedbackform.name.value=result.userFullName;
+		document.feedbackform.email.value=result.userEmail;
+		document.feedbackform.company.value=result.organizationName;
+		document.feedbackform.subject.focus();
+	}
+}
+
+
+window.onload=init;
+
+
+</script>
+
+</form>
+
+</body>
+</html>
+
