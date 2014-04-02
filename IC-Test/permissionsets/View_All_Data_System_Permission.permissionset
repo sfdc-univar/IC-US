@@ -2373,6 +2373,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account_Reassignment__c.Request_Reason__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account_Reassignment__c.ShipToNumber__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -7391,6 +7396,10 @@
     </tabSettings>
     <tabSettings>
         <tab>CoachingWorksheet__c</tab>
+        <visibility>None</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Customer_Account_Plan_History__c</tab>
         <visibility>None</visibility>
     </tabSettings>
     <tabSettings>

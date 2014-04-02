@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Useful link to show all customer numbers and account owners for a Corporate Account.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Customer Number Rollup</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

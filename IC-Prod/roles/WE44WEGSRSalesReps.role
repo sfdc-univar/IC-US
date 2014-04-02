@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>WE4-4WEG-SR Sales Reps</description>
+    <mayForecastManagerShare>true</mayForecastManagerShare>
+    <name>WE4-4WEG-SR Sales Reps</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>WE44WEGSalesManagerSanDiego</parentRole>
+</Role>

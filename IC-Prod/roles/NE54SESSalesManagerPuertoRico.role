@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>NE5-4SES Sales Manager - Puerto Rico</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>NE5-4SES Sales Manager - Puerto Rico</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>NE5_District_Manager_Florida_PR</parentRole>
+</Role>

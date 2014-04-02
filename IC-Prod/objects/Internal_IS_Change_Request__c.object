@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Internal IS Change Request to bypass Champion Approval for requests suggested by the IS Team that does not need Regional Champion Approval.  Approval will come from the Business Lead (Brian Feldtman) and the IS Approver (Jennifer Steinman).</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Actual_Completion_Date__c</fullName>
+        <description>Actual Date that Internal IS Change Request was completed and deployed.</description>
+        <externalId>false</externalId>
+        <label>Actual Completion Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Business_Lead__c</fullName>
+        <description>Business Lead approves, rejects or requests more information from the IS Dept.</description>
+        <externalId>false</externalId>
+        <label>Approval Business Lead</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need More Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Approver_Comments__c</fullName>
+        <description>Comments from either the Business Lead (Brian Feldtman) or the IS Approver (Bonnie Briant) regarding the Change Request.</description>
+        <externalId>false</externalId>
+        <label>Approver Comments</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <description>Person or group to which the case is assigned.</description>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Brian Feldtman</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Management Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Security</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eli Edwards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eva Delorio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hugh Compton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integration - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kathy Miller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maria Fitzsimons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PC Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shashank Makhija</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sheila McEvoy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Signe Einess</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Benefit_Measure__c</fullName>
+        <description>BENEFIT MEASUREMENT: Define how we will measure the benefit of the solution.</description>
+        <externalId>false</externalId>
+        <label>Benefit Measure</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Benefit_of_Proposed_Solution__c</fullName>
+        <description>BENEFITS OF PROPOSED SOLUTION: Clearly and concisely list benefits statements for your proposed solution. Include productivity gains where applicable, as well as potential for increased revenue. Reference the tangible (hard dollar) and intangible (soft dollar) savings, and where possible, reference the business drivers associated with these statements.</description>
+        <externalId>false</externalId>
+        <label>Benefit of Proposed Solution</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business_Drivers__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Drivers</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Optimization of Internal Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Growth or Margin Enhancement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other (Describe in Text Field)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business_Opportunity_or_Problem__c</fullName>
+        <description>Clearly and concisely describe the business opportunity at hand or the business problem you are trying to solve. Depending on complexity, you may choose to organize your statement into paragraphs labeled: Background, Current Process Overview, Problems Identified, and/or Opportunity.</description>
+        <externalId>false</externalId>
+        <label>Business Opportunity or Problem</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Complete_in_Sandbox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if it&apos;s complete in Sandbox and ready for review, but not done in Production yet.</inlineHelpText>
+        <label>Complete in Sandbox</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Completion_Date__c</fullName>
+        <description>Estimated date of completion of the Internal IS Change Request.</description>
+        <externalId>false</externalId>
+        <label>Estimated Completion Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Approval_Date__c</fullName>
+        <description>Date of Final Approval from Business Lead (Brian Feldtman).</description>
+        <externalId>false</externalId>
+        <label>Final Approval Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IS_Approver__c</fullName>
+        <description>IS Approver (Bonnie Briant) can accept, reject or request more information for the Change Request.</description>
+        <externalId>false</externalId>
+        <label>IS Approver</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs More Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IS_Cost_Estimate__c</fullName>
+        <description>Estimated cost to complete the Internal IS Change Request.</description>
+        <externalId>false</externalId>
+        <label>IS Cost Estimate</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Description__c</fullName>
+        <description>Used for miscellaneous description.</description>
+        <externalId>false</externalId>
+        <label>Other Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Solution__c</fullName>
+        <description>PROPOSED SOLUTION: Clearly and concisely, describe the solution you are proposing to address the business opportunity at hand or the business problem. Specify proposed changes to business processes and, if required, to technology application systems or infrastructure. INCLUDE AN EXPLANATION OF THE IMPACT OF DOING NOTHING.</description>
+        <externalId>false</externalId>
+        <label>Proposed Solution</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Remedy_CRQ__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Numeric portion of the Remedy  Change Request  (&quot;CRQ&quot;) number corresponding to this change.  All changes must be entered as CRQ tickets in Remedy before closing in SFDC.</inlineHelpText>
+        <label>Remedy CRQ #</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Current status of Internal IS Change Request.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending IS Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Learning Services Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending 3rd Party - Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Worklog__c</fullName>
+        <description>Description of work during the process.  Please ID and Date Stamp each entry.</description>
+        <externalId>false</externalId>
+        <label>Worklog</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>12</visibleLines>
+    </fields>
+    <label>Internal IS Change Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Approved</fullName>
+        <columns>NAME</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Final_Approval_Date__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <label>Approved</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Cancelled</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </filters>
+        <label>Cancelled</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Completed</fullName>
+        <columns>NAME</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <label>Completed</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Completed_Last_Month</fullName>
+        <columns>NAME</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>Other_Description__c</columns>
+        <columns>Proposed_Solution__c</columns>
+        <columns>Remedy_CRQ__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Actual_Completion_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>Completed Last Month</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>GBASSupport</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Completed_Last_Month_by_Sheila</fullName>
+        <columns>NAME</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>Other_Description__c</columns>
+        <columns>Proposed_Solution__c</columns>
+        <columns>Remedy_CRQ__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Actual_Completion_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>Sheila McEvoy</value>
+        </filters>
+        <label>Completed Last Month by Sheila</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>GBASSupport</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Completed_This_Month</fullName>
+        <columns>NAME</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>Other_Description__c</columns>
+        <columns>Proposed_Solution__c</columns>
+        <columns>Remedy_CRQ__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Actual_Completion_Date__c</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Completed This Month</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>ICR_s_Completed_Last_Month</fullName>
+        <columns>NAME</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Proposed_Solution__c</columns>
+        <columns>Benefit_of_Proposed_Solution__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>Other_Description__c</columns>
+        <columns>Priority__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Actual_Completion_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>ICR&apos;s Completed Last Month</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>IntegrationAll</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>integration</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>contains</operation>
+            <value>integration</value>
+        </filters>
+        <label>Integration - All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>IntegrationOpen</fullName>
+        <booleanFilter>(1 OR 2) and 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>integration</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>contains</operation>
+            <value>integration</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Completed</value>
+        </filters>
+        <label>Integration - Open</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>OnHold</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Priority__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>On Hold</value>
+        </filters>
+        <label>On Hold</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>OpenandApproved</fullName>
+        <columns>NAME</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>Complete_in_Sandbox__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Cancelled,On Hold</value>
+        </filters>
+        <label>Open and Approved</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>OtherNonIntegrationOpen</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Actual_Completion_Date__c</columns>
+        <columns>Final_Approval_Date__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>notContain</operation>
+            <value>integration</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>notContain</operation>
+            <value>integration</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Completed</value>
+        </filters>
+        <label>Other (Non-Integration) - Open</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>WaitingforApproval</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notContain</operation>
+            <value>Cancelled,Completed</value>
+        </filters>
+        <filters>
+            <field>Final_Approval_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Waiting for Approval</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Internal IS Change Request Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Internal IS Change Requests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Completed_Requires_CHG</fullName>
+        <active>true</active>
+        <description>All completed ICRs require a Remedy CHG # to be entered.</description>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, &quot;Completed&quot;),  TRIM(Remedy_CRQ__c)  = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Remedy_CRQ__c</errorDisplayField>
+        <errorMessage>A Remedy CHG # is required on all Completed changes.  If you have not already created the Remedy CHG ticket for this change, please do so, then come back and enter the CHG number here.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Completed_Requires_Date</fullName>
+        <active>true</active>
+        <description>Need to enter Actual Completion Date, if completed</description>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, &quot;Completed&quot;),   TEXT(Actual_Completion_Date__c)  = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Actual_Completion_Date__c</errorDisplayField>
+        <errorMessage>Actual Completion Date is required if you are Completing a ticket.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Assigned_To</fullName>
+        <active>true</active>
+        <description>Require an assignee if the status is &apos;Assigned&apos; or &apos; In Development&apos;</description>
+        <errorConditionFormula>AND( ISPICKVAL(Assigned_To__c, &quot;&quot;), OR(ISPICKVAL(Status__c , &quot;Assigned&quot;),ISPICKVAL(Status__c , &quot;In Development&quot;)))</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>Change Request must be assigned if status is &apos;Assigned&apos; or &apos;In Development&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Final_Approval_Date</fullName>
+        <active>true</active>
+        <description>We can&apos;t let CRs slip by w/o saying when they were approved</description>
+        <errorConditionFormula>AND(NOT( ISPICKVAL(Assigned_To__c,  &quot;&quot;)), TEXT( Final_Approval_Date__c) = &quot;&quot;,NOT(ISPICKVAL( Status__c ,  &quot;Cancelled&quot;)),NOT(ISPICKVAL( Status__c ,  &quot;Open&quot;)))</errorConditionFormula>
+        <errorDisplayField>Final_Approval_Date__c</errorDisplayField>
+        <errorMessage>Enter Final Approval Date!</errorMessage>
+    </validationRules>
+</CustomObject>

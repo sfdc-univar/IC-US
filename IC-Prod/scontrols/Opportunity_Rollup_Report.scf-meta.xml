@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Opportunity Roll-Up for Corporate Account special Web Link.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Opportunity Rollup Report</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

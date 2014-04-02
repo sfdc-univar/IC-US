@@ -615,6 +615,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>User_ID__c</field>
+            <table>Account.CPP__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Product2Id__c.Id</field>
             <table>Account.CPP__r</table>
         </columns>
@@ -706,6 +711,31 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Total_Annual_Spend__c</field>
+            <table>Account.CPP__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Product_Manager__c</field>
+            <table>Account.CPP__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Role_ID__c</field>
+            <table>Account.CPP__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Source__c</field>
+            <table>Account.CPP__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>UserLastModifiedDate__c</field>
+            <table>Account.CPP__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>UserLastModifiedBy__c</field>
             <table>Account.CPP__r</table>
         </columns>
         <masterLabel>CPP</masterLabel>

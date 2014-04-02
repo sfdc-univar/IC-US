@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Sales for all ship-to accounts with this customer bill-to number</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Ship-To Summary</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Western BDR &amp; Service Specialist</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>WE0 Western BDR &amp; Service Specialist</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>WE0ContactCtrMgr</parentRole>
+</Role>

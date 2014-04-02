@@ -519,6 +519,11 @@
         <visibleLines>3</visibleLines>
     </fields>
     <label>Customer Account Plan History</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>CAP History</label>
         <type>Text</type>

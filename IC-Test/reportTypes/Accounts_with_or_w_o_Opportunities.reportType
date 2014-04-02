@@ -1567,16 +1567,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>InSituCah__Ultimate_Parent__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>InSituCah__Ultimate_Parent_Flag__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>UnivarARID__c</field>
             <table>Account</table>
         </columns>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Account Growth Plan - for link to be used on Account page layouts</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Account Growth Plan</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

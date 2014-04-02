@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Shows CPP report where this Account is the &quot;Supplier&quot; on the CPP Record. Now uses javascript sControl instead, for better result.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>CPP Where SupplierOLD</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

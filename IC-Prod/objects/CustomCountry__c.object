@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>MUST BE ALL CAPS!!  All ways a country might be written: full text, ISO code, abbreviation, etc.  Truncate to 36 characters.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CountryISOCodeAlt__c</fullName>
+        <description>currently for the 3-character version.</description>
+        <externalId>false</externalId>
+        <label>Country ISO Code Alt</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CountryISOCode__c</fullName>
+        <description>ISO Country Code corresponding to this key</description>
+        <externalId>false</externalId>
+        <label>Country ISO Code</label>
+        <length>3</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CountryIntegrationValue__c</fullName>
+        <externalId>false</externalId>
+        <label>Country Integration Value</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CountryName__c</fullName>
+        <description>Informational Only</description>
+        <externalId>false</externalId>
+        <label>Country Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Custom Country</label>
+</CustomObject>

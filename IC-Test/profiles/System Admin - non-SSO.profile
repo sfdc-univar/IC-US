@@ -2372,6 +2372,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account_Reassignment__c.Request_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account_Reassignment__c.ShipToNumber__c</field>
         <readable>true</readable>
@@ -7587,6 +7592,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>CoachingWorksheet__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Customer_Account_Plan_History__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

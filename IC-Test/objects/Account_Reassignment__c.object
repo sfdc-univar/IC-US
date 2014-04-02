@@ -393,6 +393,16 @@ IF( ISPICKVAL(Status__c, &quot;Rejected&quot;),  Rejected_Date__c - Pending_Appr
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Request_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ShipToNumber__c</fullName>
         <externalId>false</externalId>
         <formula>Account__r.ShipToNumber__c</formula>

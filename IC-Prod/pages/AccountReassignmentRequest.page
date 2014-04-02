@@ -1,0 +1,135 @@
+<apex:page controller="AccountReassignmentRequestController" tabStyle="Account_Reassignments__tab">
+	    <script type="text/javascript">
+			function formenter(ev)
+	        {
+	            if (window.event && window.event.keyCode == 13 || ev.which == 13)
+	            {
+	                triggerSearchButtonClickActionFunction();
+	                return false; //Needed to prevent page from posting to server.
+	            }
+	        }
+	        function noenter(ev) { if (window.event && window.event.keyCode == 13 || ev.which == 13) { /*triggerEnterOnSearchText();*/ } }
+			function confirmSubmit()
+			{
+				return confirm("Are you sure you want to submit?\n\nAll Managers and Regional Sales Directors relevant to this request will be immediately notified.");
+			}
+	        function checkAll(cb,cbid)
+	        {
+				var inputElem = document.getElementsByTagName("input");                     
+	            for(var i=0; i<inputElem.length; i++)
+	            {             
+	                if(inputElem[i].id.indexOf(cbid)!=-1 && inputElem[i].disabled != true)
+	                {                                        
+	                    inputElem[i].checked = cb.checked;
+	                }
+	            }
+	        }
+	    </script>
+	    
+	    <apex:sectionheader title="" subtitle="Account Reassignment Request"/>
+	    <apex:form onkeypress="return formenter(event);" >
+	        <apex:pageblock title="Account Reassignment Request">
+	            <apex:pageMessages id="msgs" />
+	            <apex:actionRegion >
+				<apex:pageblocksection title="Search for Accounts" columns="1">
+	                <apex:inputtext style="width:400px; disabled:true" value="{!nameQuery}" label="Account Search" onkeypress="return noenter(event);" />
+	                <apex:selectradio label="Search By" value="{!selectedAccountSearchByOption}" >
+	                    <apex:selectoptions value="{!AccountSearchByOptions}" />
+	                </apex:selectradio>
+					<apex:selectCheckboxes label="Account Type" value="{!selectedAccountSearchByRecordTypes}">
+						<apex:selectoptions value="{!AccountSearchByRecordTypes}" />
+					</apex:selectCheckboxes>
+					<apex:commandbutton action="{!searchButtonClick}" value="Search" rerender="searchResultsPageBlockTable,resultsBlockSection,searchResultsPagingOutputPanel,msgs" />
+	            	
+	            </apex:pageblocksection>
+				<apex:actionfunction name="triggerEnterOnSearchText" action="{!searchButtonClick}" rerender="resultsTable,resultsBlockSection" />
+	            <apex:actionFunction name="triggerSearchButtonClickActionFunction" action="{!searchButtonClick}" rerender="resultsTable,resultsBlockSection" />
+	            </apex:actionRegion>
+				
+				<apex:actionRegion >
+				<apex:pageblocksection id="resultsBlockSection" title="Account Search Results" columns="1">
+	                <apex:pageMessage id="accountSearchResultsHintPageMessage" rendered="{!ISBLANK(accountSearchResultsCurrentPage)}" severity="info" strength="1" title="Results will not appear until a search is executed." />
+	                <apex:pageMessage id="accountSearchResultsNoResultsPageMessage" rendered="{!NOT(ISBLANK(accountSearchResultsCurrentPage))&&accountSearchResultsCurrentPage.size==0}" severity="warning" strength="1" title="No results found. Please try different search criteria." />
+					<apex:pageblocktable value="{!accountSearchResultsCurrentPage}" id="searchResultsPageBlockTable" var="asr" rendered="{!NOT(ISBLANK(accountSearchResultsCurrentPage))&&accountSearchResultsCurrentPage.size>0}">
+	                    <apex:column >
+	                        <apex:facet name="header">
+	                            <apex:inputcheckbox id="checkedheader" value="{!headerCheckbox}" title="Select All" onclick="checkAll(this,'checkedone')"/>
+	                        </apex:facet>
+	                        <apex:inputcheckbox id="checkedone" value="{!asr.selected}" disabled="{!asr.disabled}" title="{!asr.hoverText}"/>
+	                    </apex:column>
+	                    <apex:column value="{!asr.account.CustomerShipTo__c}" />
+						<apex:column headervalue="Account Name">
+	                        <apex:outputlink title="Your Description" value="/{!asr.account.id}">{!asr.account.Name}</apex:outputlink>
+	                        &nbsp;
+							<apex:outputlink value="/{!asr.conflictingAccountReassignmentId}" target="_blank" rendered="{!NOT(ISBLANK(asr.notificationImageUrl))}">
+	                        	<apex:image value="{!asr.notificationImageUrl}" title="{!asr.hoverText}"/>
+							</apex:outputlink>
+	                    </apex:column>
+	                    <apex:column value="{!asr.account.ShippingCity}" headerValue="City"/>
+	                    <apex:column value="{!asr.account.ShippingStateCode}" headerValue="State" />
+	                    <apex:column value="{!asr.account.AcornRolling12MoSales__c}" headerValue="Rolling 12 Month Sales"/>
+	                    <apex:column value="{!asr.account.OwnerId}" />
+	                    <apex:column value="{!asr.account.Owner.User_District__c}" headerValue="District"/>
+	                    <!--<apex:column value="{!asr.account.Owner.UserRoleId}" />-->
+	                    <apex:column value="{!asr.account.Owner.ManagerId}" />
+	                    <!--<apex:column value="{!}" />
+	                    <apex:column value="{!}" />-->
+	                </apex:pageblocktable>
+	                <apex:outputPanel layout="block" styleClass="pSearchShowMore" id="searchResultsPagingOutputPanel" rendered="{!NOT(ISBLANK(accountSearchResultsCurrentPage))&&accountSearchResultsCurrentPage.size>0}">Total Records Found: 
+	                    <apex:outputText rendered="{!IF(TotalRecordCount==500,true,false)}">500 +</apex:outputText>
+	                    <apex:outputText rendered="{!IF(TotalRecordCount< 500,true,false)}">{!TotalRecordCount}</apex:outputText>
+	                    <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(HasPrevious)}"/>
+	                    <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!HasPrevious}"/>
+	                    <apex:commandLink action="{!doPrevious}" title="Previous Page" value="Previous Page" rendered="{!HasPrevious}" rerender="searchResultsPageBlockTable,searchResultsPagingOutputPanel,msgs2,checkedheader"/>
+	                    <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(HasPrevious)}">Previous Page</apex:outputPanel>
+						&nbsp;(Viewing {!PageFirstRecordNumber}-{!PageLastRecordNumber})&nbsp;
+	                    <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(HasNext)}">Next Page</apex:outputPanel>
+	                    <apex:commandLink id="nextPageCommandLink" title="Next Page" value="Next Page" rendered="{!HasNext}" action="{!doNext}" rerender="searchResultsPageBlockTable,searchResultsPagingOutputPanel,msgs2,checkedheader"/>&nbsp;
+	                    <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!HasNext}"/>
+	                    <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(HasNext)}"/>
+						&nbsp;Records Per Page
+						<apex:selectList id="recordsPerPage" label="Records Per Page" value="{!SelectedRecordsPerPageOption}" size="1" >
+							<apex:selectoptions value="{!RecordsPerPageOptions}"/>
+							<apex:actionSupport event="onchange" action="{!searchButtonClick}" rerender="resultsTable,resultsBlockSection,searchResultsPagingOutputPanel"/>
+						</apex:selectList>
+	               </apex:outputPanel>
+	            </apex:pageblocksection>
+				<apex:pageblocksection id="newOwnerPBSection" title="New Owner" showHeader="false" columns="2">
+	                <apex:pageblocksectionitem />
+	                <apex:pageblocksectionitem />
+	                <apex:inputfield id="templateNewOwnerInputField" label="Specify New Owner" value="{!template.New_Owner__c}">
+	                    <apex:actionSupport event="onchange" action="{!newOwnerLookupOnChange}" rerender="msgs2,newOwnerPBSection"/>
+	                </apex:inputfield>
+	                <apex:outputfield id="newOwnerDistrictOutputField" value="{!newOwner.User_District__c}" label="New Owner District"/>
+	                <apex:outputfield id="newOwnerManagerOutputField" value="{!newOwner.ManagerId}" label="New Owner Manager"/>
+	                <apex:outputfield id="newOwnerRoleOutputField" value="{!newOwner.UserRoleId}" label="New Owner Role"/>
+	                <apex:commandButton id="addToDratedAccountReassignmentsTableButton" value="Add to List" style="color:#00CC00" disabled="{!ISNULL(template.New_Owner__c)}" title="Add to Drafted Account Reassignments List" action="{!addButtonClick}" reRender="resultsTable, accountReassignmentsTable, accountReassignmentsSection,accountSearchResultsCurrentPage,resultsBlockSection,errorsSelectingAccountsForReassignmentPageMessage,msgs2,resultsBlockSection"/>
+	            </apex:pageblocksection>
+				</apex:actionRegion>
+				
+	            <apex:pageblocksection id="accountReassignmentsSection" title="Selected Accounts for Reassignment" columns="1">
+	                <apex:pageMessages id="msgs2" escape="false" />
+					<apex:commandButton id="removeFromDratedAccountReassignmentsTableButton" value="Remove from List" disabled="{!selectedAccountsForReassignment.size==0}" style="color:#FF0000" title="Remove from Drafted Account Reassignments List" action="{!removeButtonClick}" reRender="resultsTable, accountReassignmentsTable, accountReassignmentsSection, accountSearchResultsCurrentPage" />
+	                <apex:pageblocktable value="{!selectedAccountsForReassignment}" id="accountReassignmentsTable" var="ar" rendered="{!NOT(ISBLANK(selectedAccountsForReassignment))&&selectedAccountsForReassignment.size>0}">
+	                    <apex:column >
+	                        <apex:inputcheckbox value="{!ar.selected}" />
+	                    </apex:column>
+						<apex:column value="{!ar.customerShipTo}" headerValue="Customer Ship To" />
+	                    <apex:column value="{!ar.accountReassignment.Account__c}" headerValue="Account Name" />
+						<apex:column value="{!ar.rolling12MonthSales}" headerValue="Rolling 12 Month Sales" />
+	                    <apex:column value="{!ar.accountReassignment.Current_Owner__c}" />
+						<apex:column value="{!ar.accountReassignment.Current_Owner_Manager__c}" />
+						<apex:column value="{!ar.currentOwnerDistrict}" headerValue="Current Owner District" />
+	                    <apex:column value="{!ar.accountReassignment.New_Owner__c}" />
+						<apex:column value="{!ar.accountReassignment.New_Owner_Manager__c}" />
+						<apex:column value="{!ar.newOwnerDistrict}" headerValue="New Owner District" />
+	                </apex:pageblocktable>
+					<!--<apex:pageMessage id="errorsSelectingAccountsForReassignmentPageMessage" rendered="{!errorsSelectingAccountsForReassignment.size==0}" severity="error" strength="3" title="todo msg here <br/> more text " escape="false" />-->
+	            </apex:pageblocksection>
+	            <apex:pageBlockButtons location="Bottom">
+	                <apex:commandButton action="{!submitForApprovalButtonClick}" value="Submit for Approval" onclick="return confirmSubmit();" immediate="true"/>
+	                <apex:commandButton action="{!cancelButtonClick}" value="Exit"/>
+	            </apex:pageBlockButtons>
+	        </apex:pageblock>
+	    </apex:form>
+	</apex:page>

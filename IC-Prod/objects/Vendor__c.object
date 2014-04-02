@@ -1,0 +1,1708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>CPP_Producer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CPP Producer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CPP_Supplier__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CPP Supplier</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Country Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AF 	AFGHANISTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AX 	ÅLAND ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AL 	ALBANIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DZ 	ALGERIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AS 	AMERICAN SAMOA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AD 	ANDORRA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO 	ANGOLA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AI 	ANGUILLA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AQ 	ANTARCTICA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AG 	ANTIGUA AND BARBUDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AR 	ARGENTINA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AM 	ARMENIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AW 	ARUBA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AU 	AUSTRALIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AT 	AUSTRIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ 	AZERBAIJAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BS 	BAHAMAS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BH 	BAHRAIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BD 	BANGLADESH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BB 	BARBADOS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BY 	BELARUS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BE 	BELGIUM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BZ 	BELIZE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BJ 	BENIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BM 	BERMUDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BT 	BHUTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BO 	BOLIVIA, PLURINATIONAL STATE OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BQ 	BONAIRE, SINT EUSTATIUS AND SABA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BA 	BOSNIA AND HERZEGOVINA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BW 	BOTSWANA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BV 	BOUVET ISLAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BR 	BRAZIL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO 	BRITISH INDIAN OCEAN TERRITORY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BN 	BRUNEI DARUSSALAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BG 	BULGARIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BF 	BURKINA FASO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BI 	BURUNDI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KH 	CAMBODIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CM 	CAMEROON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA 	CANADA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CV 	CAPE VERDE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KY 	CAYMAN ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CF 	CENTRAL AFRICAN REPUBLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TD 	CHAD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CL 	CHILE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CN 	CHINA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CX 	CHRISTMAS ISLAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CC 	COCOS (KEELING) ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO 	COLOMBIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KM 	COMOROS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CG 	CONGO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CD 	CONGO, THE DEMOCRATIC REPUBLIC OF THE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CK 	COOK ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CR 	COSTA RICA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CI 	CÔTE D&apos;IVOIRE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HR 	CROATIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CU 	CUBA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CW 	CURAÇAO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CY 	CYPRUS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CZ 	CZECH REPUBLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DK 	DENMARK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DJ 	DJIBOUTI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DM 	DOMINICA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DO 	DOMINICAN REPUBLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EC 	ECUADOR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EG 	EGYPT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SV 	EL SALVADOR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GQ 	EQUATORIAL GUINEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ER 	ERITREA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EE 	ESTONIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ET 	ETHIOPIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FK 	FALKLAND ISLANDS (MALVINAS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FO 	FAROE ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FJ 	FIJI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FI 	FINLAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR 	FRANCE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GF 	FRENCH GUIANA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PF 	FRENCH POLYNESIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TF 	FRENCH SOUTHERN TERRITORIES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA 	GABON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GM 	GAMBIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GE 	GEORGIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DE 	GERMANY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GH 	GHANA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GI 	GIBRALTAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GR 	GREECE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GL 	GREENLAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GD 	GRENADA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GP 	GUADELOUPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GU 	GUAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GT 	GUATEMALA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GG 	GUERNSEY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GN 	GUINEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GW 	GUINEA-BISSAU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GY 	GUYANA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HT 	HAITI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HM 	HEARD ISLAND AND MCDONALD ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VA 	HOLY SEE (VATICAN CITY STATE)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HN 	HONDURAS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HK 	HONG KONG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HU 	HUNGARY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IS 	ICELAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN 	INDIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ID 	INDONESIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IR 	IRAN, ISLAMIC REPUBLIC OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IQ 	IRAQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IE 	IRELAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IM 	ISLE OF MAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL 	ISRAEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IT 	ITALY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JM 	JAMAICA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JP 	JAPAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JE 	JERSEY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JO 	JORDAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KZ 	KAZAKHSTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KE 	KENYA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KI 	KIRIBATI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KP 	KOREA, DEMOCRATIC PEOPLE&apos;S REPUBLIC OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KR 	KOREA, REPUBLIC OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KW 	KUWAIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KG 	KYRGYZSTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LA 	LAO PEOPLE&apos;S DEMOCRATIC REPUBLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LV 	LATVIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LB 	LEBANON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LS 	LESOTHO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LR 	LIBERIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LY 	LIBYA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LI 	LIECHTENSTEIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LT 	LITHUANIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LU 	LUXEMBOURG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MO 	MACAO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MK 	MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MG 	MADAGASCAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MW 	MALAWI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MY 	MALAYSIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MV 	MALDIVES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ML 	MALI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MT 	MALTA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MH 	MARSHALL ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MQ 	MARTINIQUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MR 	MAURITANIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MU 	MAURITIUS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YT 	MAYOTTE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MX 	MEXICO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FM 	MICRONESIA, FEDERATED STATES OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MD 	MOLDOVA, REPUBLIC OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MC 	MONACO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MN 	MONGOLIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ME 	MONTENEGRO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS 	MONTSERRAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA 	MOROCCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MZ 	MOZAMBIQUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MM 	MYANMAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA 	NAMIBIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NR 	NAURU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NP 	NEPAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NL 	NETHERLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NC 	NEW CALEDONIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NZ 	NEW ZEALAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NI 	NICARAGUA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NE 	NIGER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NG 	NIGERIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NU 	NIUE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NF 	NORFOLK ISLAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MP 	NORTHERN MARIANA ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NO 	NORWAY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OM 	OMAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PK 	PAKISTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PW 	PALAU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PS 	PALESTINE, STATE OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA 	PANAMA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PG 	PAPUA NEW GUINEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PY 	PARAGUAY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE 	PERU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PH 	PHILIPPINES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PN 	PITCAIRN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL 	POLAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT 	PORTUGAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PR 	PUERTO RICO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QA 	QATAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RE 	RÉUNION</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RO 	ROMANIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RU 	RUSSIAN FEDERATION</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RW 	RWANDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BL 	SAINT BARTHÉLEMY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SH 	SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KN 	SAINT KITTS AND NEVIS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LC 	SAINT LUCIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MF 	SAINT MARTIN (FRENCH PART)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PM 	SAINT PIERRE AND MIQUELON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VC 	SAINT VINCENT AND THE GRENADINES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WS 	SAMOA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SM 	SAN MARINO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ST 	SAO TOME AND PRINCIPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SA 	SAUDI ARABIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SN 	SENEGAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RS 	SERBIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC 	SEYCHELLES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SL 	SIERRA LEONE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SG 	SINGAPORE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SX 	SINT MAARTEN (DUTCH PART)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SK 	SLOVAKIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI 	SLOVENIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SB 	SOLOMON ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SO 	SOMALIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZA 	SOUTH AFRICA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GS 	SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SS 	SOUTH SUDAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ES 	SPAIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LK 	SRI LANKA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SD 	SUDAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SR 	SURINAME</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SJ 	SVALBARD AND JAN MAYEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SZ 	SWAZILAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SE 	SWEDEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CH 	SWITZERLAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SY 	SYRIAN ARAB REPUBLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TW 	TAIWAN, PROVINCE OF CHINA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TJ 	TAJIKISTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TZ 	TANZANIA, UNITED REPUBLIC OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TH 	THAILAND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TL 	TIMOR-LESTE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TG 	TOGO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TK 	TOKELAU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TO 	TONGA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TT 	TRINIDAD AND TOBAGO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TN 	TUNISIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TR 	TURKEY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TM 	TURKMENISTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC 	TURKS AND CAICOS ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV 	TUVALU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UG 	UGANDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UA 	UKRAINE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AE 	UNITED ARAB EMIRATES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GB 	UNITED KINGDOM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US 	UNITED STATES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UM 	UNITED STATES MINOR OUTLYING ISLANDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UY 	URUGUAY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UZ 	UZBEKISTAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VU 	VANUATU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VE 	VENEZUELA, BOLIVARIAN REPUBLIC OF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VN 	VIET NAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VG 	VIRGIN ISLANDS, BRITISH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VI 	VIRGIN ISLANDS, U.S.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WF 	WALLIS AND FUTUNA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EH 	WESTERN SAHARA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YE 	YEMEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZM 	ZAMBIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZW 	ZIMBABWE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Import_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Import ID</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Industry__c</fullName>
+        <externalId>false</externalId>
+        <label>Industry</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Adhesives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aerospace</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agriculture/Fertilizer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Biofuels</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical Producers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elastomers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronics - Circuit Board</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronics - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronics - Semi Conductor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Energy - Oil Field Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Energy - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Energy - Petroleum Refinery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food - Flavor Extracts/Syrup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food - Food Preparations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forest Product - Pulp/Paper Mill</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forest Products - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial - Misc. Mfg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ink</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paint &amp; Coatings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Care</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharmaceutical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plating/Metal Finishing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Preservatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reseller/Subdistributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rubber &amp; Plastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sealants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Textile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waste Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Water Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OPP_CC_WS_Competitor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OPP CC WS Competitor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_CC_WS_Current_Service_Provider__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OPP CC WS Current Service Provider</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_CC_WS_Univar_Partner_TSDF__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OPP CC WS Univar Partner TSDF</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_GSE_Competitor_Producer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GS&amp;E Competitor&apos;s Producer Name</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_GSE_Competitor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GS&amp;E Competitor Name</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_GSE_Producer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GS&amp;E Producer Name</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_GSE_Supplier__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GS&amp;E Supplier Name</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_IC_Competitor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OPP IC Competitor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_IC_Producer_Partner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OPP IC Producer Partner</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OPP_MB_Competitor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OPP MB Competitor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Port__c</fullName>
+        <externalId>false</externalId>
+        <label>Port</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SKU_Vendor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Vendor used on SKU Products that come from the UVX?</inlineHelpText>
+        <label>SKU Vendor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Request_Producer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sample Request Producer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Univar_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Univar Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Vendors</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>UVX Vendor Number.  Exists only on vendors that Univar currently purchases from.</description>
+        <externalId>true</externalId>
+        <label>Vendor Number</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Vendor</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Vendor_Number__c</columns>
+        <columns>SKU_Vendor__c</columns>
+        <columns>OPP_GSE_Competitor_Producer__c</columns>
+        <columns>OPP_GSE_Producer__c</columns>
+        <columns>OPP_GSE_Supplier__c</columns>
+        <columns>OPP_GSE_Competitor__c</columns>
+        <columns>CPP_Supplier__c</columns>
+        <columns>CPP_Producer__c</columns>
+        <columns>OPP_CC_WS_Competitor__c</columns>
+        <columns>OPP_CC_WS_Current_Service_Provider__c</columns>
+        <columns>OPP_CC_WS_Univar_Partner_TSDF__c</columns>
+        <columns>OPP_IC_Competitor__c</columns>
+        <columns>OPP_IC_Producer_Partner__c</columns>
+        <columns>OPP_MB_Competitor__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Vendor_Quick_Edit</fullName>
+        <columns>NAME</columns>
+        <columns>CPP_Producer__c</columns>
+        <columns>CPP_Supplier__c</columns>
+        <columns>OPP_CC_WS_Competitor__c</columns>
+        <columns>OPP_CC_WS_Current_Service_Provider__c</columns>
+        <columns>OPP_IC_Competitor__c</columns>
+        <columns>OPP_IC_Producer_Partner__c</columns>
+        <columns>OPP_MB_Competitor__c</columns>
+        <columns>OPP_CC_WS_Univar_Partner_TSDF__c</columns>
+        <columns>Sample_Request_Producer__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Vendor Quick Edit</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Vendor_Quick_EditSKU</fullName>
+        <columns>NAME</columns>
+        <columns>SKU_Vendor__c</columns>
+        <columns>Vendor_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Vendor Quick Edit - SKU Vendors</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Waste_Stream</fullName>
+        <columns>NAME</columns>
+        <columns>OPP_CC_WS_Competitor__c</columns>
+        <columns>OPP_CC_WS_Current_Service_Provider__c</columns>
+        <columns>OPP_CC_WS_Univar_Partner_TSDF__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPP_CC_WS_Competitor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPP_CC_WS_Current_Service_Provider__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPP_CC_WS_Univar_Partner_TSDF__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Waste Stream</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Vendor Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000Qe3wEAC</fullName>
+        <active>true</active>
+        <field>Opportunity.Mini_Bulk_Competitor_lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_MB_Competitor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Opportunity_Mini Bulk Competitor</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000Qe6MEAS</fullName>
+        <active>true</active>
+        <field>Opportunity.IC_Competitor_Lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_IC_Competitor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Opportunity_IC Competitor</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000Qe7AEAS</fullName>
+        <active>true</active>
+        <field>Opportunity.IC_Producer_Partner_lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_IC_Producer_Partner__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity_OPP IC Producer Partner</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000Qe7KEAS</fullName>
+        <active>true</active>
+        <field>Opportunity.CC_Opportunity_Producer_Partner_Lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_CC_WS_Univar_Partner_TSDF__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity_CC Opportunity Producer Part</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000b9YxEAI</fullName>
+        <active>true</active>
+        <field>Opportunity.GSE_Producer_Name__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_GSE_Producer__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <infoMessage>This list of vendors for this field is limited to just GS&amp;E Producer Partner Vendors.</infoMessage>
+        <isOptional>false</isOptional>
+        <name>Opportunity_GSE Producer Partner</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000b9ZMEAY</fullName>
+        <active>true</active>
+        <field>Opportunity.GSE_Competitor_Name__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_GSE_Competitor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <infoMessage>This list is filtered for GS&amp;E Competitors.</infoMessage>
+        <isOptional>false</isOptional>
+        <name>Opportunity_GSE Competitor Name</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000b9ZWEAY</fullName>
+        <active>true</active>
+        <field>Opportunity.GSE_Competitor_Producer_Name__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_GSE_Competitor_Producer__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <infoMessage>This list is filtered for GS&amp;E Producers only.</infoMessage>
+        <isOptional>true</isOptional>
+        <name>Opportunity_GSE Producer Name</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000bWciEAE</fullName>
+        <active>true</active>
+        <field>Opportunity.CC_Competitor_Lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_CC_WS_Competitor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity_CC Competitor</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000bWcxEAE</fullName>
+        <active>true</active>
+        <field>Opportunity.Current_Service_Provider_Lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_CC_WS_Current_Service_Provider__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity_Current Service Provider</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00Ne0000000buPSEAY</fullName>
+        <active>true</active>
+        <field>Opportunity.GSE_Supplier_Name__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_GSE_Supplier__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <infoMessage>Only GS&amp;E Suppliers are listed here.</infoMessage>
+        <isOptional>true</isOptional>
+        <name>Opportunity_GS&amp;E Supplier Name</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01I3000000002m3EAA_00NM0000000sw97MAA</fullName>
+        <active>true</active>
+        <field>CPP__c.IC_Producer_Partner__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_IC_Producer_Partner__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>CPP_IC Producer Partner</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01I3000000002m3EAA_00NM00000010lwLMAQ</fullName>
+        <active>true</active>
+        <field>CPP__c.IC_Supplier__c</field>
+        <filterItems>
+            <field>Vendor__c.CPP_Supplier__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>CPP_IC Supplier</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01I3000000005bZEAQ_00Ne0000000QihMEAS</fullName>
+        <active>true</active>
+        <field>ChemCare__c.Competitor_TSDF_Lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_CC_WS_Competitor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Waste Stream_Competitor TSDF Lookup</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01I3000000005bZEAQ_00Ne0000000QihREAS</fullName>
+        <active>true</active>
+        <field>ChemCare__c.Service_Provider_Lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_CC_WS_Current_Service_Provider__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Waste Stream_Service Provider Lookup</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01I3000000005sSEAQ_00NM0000000swBmMAI</fullName>
+        <active>true</active>
+        <field>SampleRequest__c.IC_Producer_Partner__c</field>
+        <filterItems>
+            <field>Vendor__c.OPP_IC_Producer_Partner__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Sample Request_IC Producer Partner</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01I3000000005sSEAQ_00Ne0000000Qe8SEAS</fullName>
+        <active>true</active>
+        <field>SampleRequest__c.Producer_lookup__c</field>
+        <filterItems>
+            <field>Vendor__c.Sample_Request_Producer__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Sample Request_Producer</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01Ia0000000GqhHEAS_00Nf0000000Xxg7EAC</fullName>
+        <active>true</active>
+        <field>SKU_Level_Product__c.Vendor__c</field>
+        <filterItems>
+            <field>Vendor__c.SKU_Vendor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>SKU-Level Product_Vendor</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01Ie00000000KkDEAU_00Ne0000000ZoGMEA0</fullName>
+        <active>true</active>
+        <field>CPP_Supplier_Info__c.Supplier__c</field>
+        <filterItems>
+            <field>Vendor__c.CPP_Supplier__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>CPP Supplier Info_Supplier</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01Ie00000000KkDEAU_00Ne0000000ZoGREA0</fullName>
+        <active>true</active>
+        <field>CPP_Supplier_Info__c.Producer__c</field>
+        <filterItems>
+            <field>Vendor__c.CPP_Producer__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>CPP Supplier Info_Producer</name>
+    </namedFilters>
+    <pluralLabel>Vendors</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>SKU_Vendor_needs_Vendor_Number</fullName>
+        <active>true</active>
+        <errorConditionFormula>( ISBLANK(Vendor_Number__c ) &amp;&amp;  SKU_Vendor__c )
+||
+( NOT(ISBLANK(Vendor_Number__c )) &amp;&amp;  NOT(SKU_Vendor__c ))</errorConditionFormula>
+        <errorMessage>SKU Vendors require a Vendor Number, and all Vendors with a Vendor Number must be designated as SKU Vendors.</errorMessage>
+    </validationRules>
+</CustomObject>

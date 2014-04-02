@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Custom settings for sending License Alert Emails. SendTo, CopyTo and EmailTemplate&apos;s DeveloperName. This is used by the AvailableLicenseScheduler apex class.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CopyTo__c</fullName>
+        <description>Email address to use for the CC: on the Lilcense alert email. Not required.  If the field is blank, no CC will be added.</description>
+        <externalId>false</externalId>
+        <label>Copy To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailTemplate__c</fullName>
+        <description>Enter the Email Template&apos;s DeveloperName to use for sending the License Alert emails.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Click on &quot;Manage&quot;</inlineHelpText>
+        <label>Email Template</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SendTo__c</fullName>
+        <description>User to Send the Email to.  Will be used in a SOQL query:
+
+User u = [select id, Name from User WHERE IsActive=true AND Email =:SendTo Limit 1];</description>
+        <externalId>false</externalId>
+        <label>Send To</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SenderEmail__c</fullName>
+        <description>Who is the email from.  Used in the reply to.</description>
+        <externalId>false</externalId>
+        <label>Sender Email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SenderName__c</fullName>
+        <description>setSenderDisplayName used in the email.  Shows who the email is from.</description>
+        <externalId>false</externalId>
+        <label>Sender Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>License Alert Configurations</label>
+</CustomObject>

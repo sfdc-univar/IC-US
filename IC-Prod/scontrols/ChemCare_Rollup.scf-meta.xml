@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Used on the Corporate Account layout, to roll-up ChemCare CPPs for the Parent and all Child Accounts</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>ChemCare Roll-Up</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

@@ -11,15 +11,7 @@
      .noList{list-style-img: url('/profilephoto/005/T');padding-left:0px}
       </style>
       
- <apex:tabPanel activeTabClass="activeTab" inactiveTabClass="inactiveTab" switchType="client">
-     
-<apex:tab label="Sales Rep Performance" name="salesrep" id="salesrep">
-    <apex:iframe src="http://wqv-aws-tabg01.chemd.net/t/sales/views/SalesRepPerformance/MTD" scrolling="true" height="1500px"/>
-</apex:tab>
-<apex:tab label="Sales Office Performance" name="salesoffice" id="salesoffice">
-    <apex:iframe src="http://wqv-aws-tabg01.chemd.net/t/sales/views/SalesOfficePerformance/MTD" scrolling="true" height="1500px"/>
+    <apex:iframe src="https://tableau.univar.com/t/sales/workbooks?project=5" scrolling="true" height="1500px"/>
 
-</apex:tab>
-</apex:tabPanel>
 
 </apex:page>

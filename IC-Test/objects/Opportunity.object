@@ -12956,7 +12956,7 @@ IF( ISNULL( GSE_Producer_Name__c ), 0, 20)</formula>
         <fullName>IC_Producer_Partner_lookup__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>IC Producer Partner</label>
+        <label>Producer Partner</label>
         <referenceTo>Vendor__c</referenceTo>
         <relationshipLabel>Opportunities (OPP IC Producer Partner)</relationshipLabel>
         <relationshipName>IC_Producer_Partner_Opportunities</relationshipName>
@@ -16844,7 +16844,7 @@ IF (ISPICKVAL(Priority__c, &apos;1&apos;), IMAGE(&apos;/servlet/servlet.FileDown
     <fields>
         <fullName>Producer_Name__c</fullName>
         <externalId>false</externalId>
-        <label>Producer Name OLD</label>
+        <label>XXXProducer Name</label>
         <picklist>
             <picklistValues>
                 <fullName>3M</fullName>
@@ -20132,7 +20132,7 @@ IF (ISPICKVAL(Priority__c, &apos;1&apos;), IMAGE(&apos;/servlet/servlet.FileDown
     <fields>
         <fullName>Producer_Partner__c</fullName>
         <externalId>false</externalId>
-        <label>Producer Partner OLD</label>
+        <label>XXXProducer Partner</label>
         <picklist>
             <picklistValues>
                 <fullName>A.G. Layne, Inc.</fullName>
@@ -25581,9 +25581,10 @@ Establish Pricing, Sell Value Added Service, Obtain Price Support, Secure Volume
     <fields>
         <fullName>TDS_Assistance_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <description>Technical Development Owner Assistance.</description>
+        <description>Technical Development Specialist or Product Manager Assigned to the Opportunity</description>
         <externalId>false</externalId>
-        <label>TDS Assistance Owner</label>
+        <inlineHelpText>Technical Development Specialist or Product Manager Assigned to the Opportunity</inlineHelpText>
+        <label>TDS / PM Assigned</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Opportunities</relationshipName>
         <required>false</required>

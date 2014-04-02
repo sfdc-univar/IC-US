@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>MUST BE ALL CAPS!!  All valid State names, prefixed by Country ISO Codes because there are duplicate state names across multiple countries. Truncate to 36 characters.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CountryName__c</fullName>
+        <description>Informational Only</description>
+        <externalId>false</externalId>
+        <label>Country Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StateISOCode__c</fullName>
+        <description>ISO Code of this state in this country</description>
+        <externalId>false</externalId>
+        <label>State ISO Code</label>
+        <length>3</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StateIntegrationValue__c</fullName>
+        <description>Integration uses this value, read from the mirror table.</description>
+        <externalId>false</externalId>
+        <label>State Integration Value</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StateName__c</fullName>
+        <description>Informational only, currently not used</description>
+        <externalId>false</externalId>
+        <label>State Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Custom State</label>
+</CustomObject>

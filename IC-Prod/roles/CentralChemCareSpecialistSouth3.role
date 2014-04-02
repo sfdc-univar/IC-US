@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Central ChemCare Specialist - South 3</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Central ChemCare Specialist - South 3</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>CentralChemCareSalesSupportManager</parentRole>
+</Role>

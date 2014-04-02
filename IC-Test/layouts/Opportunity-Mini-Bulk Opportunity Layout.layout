@@ -27,6 +27,10 @@
                 <field>Product__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>IC_Producer_Partner_lookup__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>MB_Competitor__c</field>
             </layoutItems>
